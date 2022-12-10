@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*    Variables   */
+:root {
+    --code: #8b5cf6;
+    --sub: #a78bfa;
+    --sec: #facc15;
+}
+
+/*     Scroll Bar      */
+::-webkit-scrollbar {
+    background-color: #111827;
+    width: 0.3rem;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--code);
+}
+
+/*      Cursor       */
+
+.cursor {
+    animation: blink 1s ease-in-out infinite;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 100;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+/*        Btn Shadow       */
+
+.btn-shadow:hover {
+    -webkit-box-shadow: -4px 4px 0px 0px var(--sec);
+    -moz-box-shadow: -4px 4px 0px 0px var(--sec);
+    box-shadow: -4px 4px 0px 0px var(--sec);
+}
