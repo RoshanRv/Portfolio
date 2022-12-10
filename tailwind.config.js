@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 module.exports = {
     content: [
         "./app/**/*.{js,ts,jsx,tsx}",
@@ -6,7 +7,17 @@ module.exports = {
         "./components/**/*.{js,ts,jsx,tsx}",
     ],
     theme: {
-        extend: {},
+        extend: {
+            fontFamily: {
+                disp: ["Raleway", "sans-serif"],
+                code: ["Source Code Pro", "monospace"],
+            },
+            colors: {
+                code: "#8b5cf6",
+                sub: "#a78bfa",
+                sec: "#facc15",
+            },
+        },
     },
     plugins: [],
 }
