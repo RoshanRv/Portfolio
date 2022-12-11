@@ -3,16 +3,29 @@ import CodeText from "./CodeText"
 
 const Education = () => {
     return (
-        <section className="flex justify-center items-center h-screen">
+        <section
+            id="education"
+            style={{
+                backgroundImage: `url('college.svg')`,
+                backgroundSize: "35%",
+                backgroundRepeat: "no-repeat",
+                backgroundPosition: "50% 50%",
+                fill: "red",
+            }}
+            className="flex justify-center items-center min-h-screen pb-8"
+        >
             <div>
                 <CodeText type="head" tag="h1">
-                    <h1>Education</h1>
+                    <h1 className="font-cod">
+                        <span className="text-sec font-code">02.</span>
+                        Education
+                    </h1>
                 </CodeText>
 
                 {/*   Timeline     */}
                 <div className="mt-16">
                     {/*     Tagore     */}
-                    <div className="border-l-4 border-l-sub p-8  flex flex-col gap-y-4  relative">
+                    <div className="border-l-4 border-l-sec p-8  flex flex-col gap-y-4  relative">
                         <EducationCard
                             name="Tagore Vidyalayam Matriculation Higher Seconday
                                 School"
@@ -21,7 +34,7 @@ const Education = () => {
                         />
                     </div>
                     {/*     TVS     */}
-                    <div className="border-l-4 border-sub p-8 flex flex-col gap-y-4  relative">
+                    <div className="border-l-4 border-sec p-8 flex flex-col gap-y-4  relative">
                         <EducationCard
                             name="The TVS School"
                             std="11th - 12th"
@@ -29,7 +42,7 @@ const Education = () => {
                         />
                     </div>
                     {/*     KCET     */}
-                    <div className="border-l-4 border-sub p-8 flex flex-col gap-y-4  relative">
+                    <div className="border-l-4 border-sec p-8 flex flex-col gap-y-4  relative">
                         <EducationCard
                             name="Kamaraj College of Engineering & Technology"
                             std="B.Tech. - Artificial Intelligence & Data Science"
@@ -39,7 +52,6 @@ const Education = () => {
                     </div>
                 </div>
             </div>
-            <div></div>
         </section>
     )
 }
