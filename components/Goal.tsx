@@ -7,7 +7,7 @@ const Goal = () => {
                 draggable={false}
                 src="goal.png"
                 alt=""
-                className="border-2 border-sub rounded-md shadow-2xl shadow-black "
+                className="border-2 border-sec rounded-md shadow-2xl shadow-black "
             />
             {/*     CURSOR   */}
             <div className="absolute w-3 h-5 bg-white/80 top-[76%] left-[14%]  cursor "></div>

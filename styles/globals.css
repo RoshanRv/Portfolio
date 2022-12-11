@@ -9,15 +9,21 @@
     --sec: #facc15;
 }
 
+body {
+    scroll-behavior: smooth;
+}
+
 /*     Scroll Bar      */
 ::-webkit-scrollbar {
-    background-color: #111827;
+    background-color: rgb(17, 24, 39);
     width: 0.3rem;
 }
 
 ::-webkit-scrollbar-thumb {
     background-color: var(--code);
 }
+
+/*    Main Home Hero       */
 
 /*      Cursor       */
 
@@ -43,4 +49,21 @@
     -webkit-box-shadow: -4px 4px 0px 0px var(--sec);
     -moz-box-shadow: -4px 4px 0px 0px var(--sec);
     box-shadow: -4px 4px 0px 0px var(--sec);
+}
+
+/*      Header       */
+
+.head-btn-shadow:hover {
+    -webkit-box-shadow: -4px 4px 0px 0px var(--sec);
+    -moz-box-shadow: -4px 4px 0px 0px var(--sec);
+    box-shadow: 4px 4px 0px 0px var(--sec);
+}
+
+.logo-shadow:hover {
+    text-shadow: 4px 4px 2px var(--sec);
+    filter: drop-shadow(4px 4px 0px var(--sec));
+}
+
+.txt-shadow {
+    text-shadow: 1px 1px 0px rgb(84, 84, 84);
 }

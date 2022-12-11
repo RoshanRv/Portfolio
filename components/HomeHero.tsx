@@ -2,7 +2,6 @@ import React from "react"
 import Button from "./Button"
 import CodeText from "./CodeText"
 import Goal from "./Goal"
-import BG from "./../public/Rv.svg"
 
 const HomeHero = () => {
     return (

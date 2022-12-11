@@ -21,7 +21,7 @@ const Skill = ({ hoverState, languages }: SkillProps) => {
                         lang.style
                     } ${
                         hoverState === lang.name
-                            ? lang.hoverStyle + "scale-150 txt-shadow"
+                            ? lang.hoverStyle + "scale-150"
                             : ""
                     } `}
                 >
