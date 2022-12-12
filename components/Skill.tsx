@@ -13,11 +13,11 @@ interface SkillProps {
 
 const Skill = ({ hoverState, languages }: SkillProps) => {
     return (
-        <div className="flex flex-wrap h-full w-5/12 text-gray-700 gap-x-8 gap-y-4 ">
+        <div className="flex flex-wrap h-full md:w-5/12 text-gray-700 gap-x-8 gap-y-4 ">
             {languages.map((lang, i) => (
                 <h1
                     key={i}
-                    className={`font-semibold transition-all font-code ${
+                    className={`font-semibold cursor-pointer select-none transition-all font-code hover:scale-150 ${
                         lang.style
                     } ${
                         hoverState === lang.name

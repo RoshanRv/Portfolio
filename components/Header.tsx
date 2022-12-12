@@ -5,7 +5,7 @@ import Link from "next/link"
 const HeaderButton = ({ name, num }: { name: string; num: string }) => {
     return (
         <Link href={`#${name.toLowerCase()}`}>
-            <button className="font-code text-white p-2 pt-0 hover:scale-110 duration-700 relative text-sm before:contents-['']  before:absolute before:bottom-0 before:left-0 before:w-0 before:hover:w-full before:transition-all before:duration-500 before:h-[1px] before:bg-sec after:contents-['']  after:absolute after:-bottom-0 after:right-0 after:h-0 after:hover:h-full after:transition-all after:duration-500 after:w-[1px] after:bg-sec head-btn-shadow transition-all ">
+            <button className="font-code text-white p-2 pt-0 hover:scale-110 duration-700 relative text-sm before:contents-['']  before:absolute before:bottom-0 before:left-0 before:w-0 before:hover:w-full before:transition-all before:duration-500 before:h-[1px] before:bg-sec after:contents-['']  after:absolute after:-bottom-0 after:right-0 after:h-0 after:hover:h-full after:transition-all after:duration-500 after:w-[1px] after:bg-sec head-btn-shadow transition-all outline-0">
                 <span className="text-sec text-sm">{`0${num}. `}</span>
                 <span className="text-code text-sm">{"< "}</span>
                 {name}

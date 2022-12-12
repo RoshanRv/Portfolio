@@ -18,9 +18,17 @@ const CodeText = ({ tag, children, type, line = "multi" }: CodeTextProps) => {
                 : "flex-row gap-x-1 items-center"
         }    
 
-        ${type == "head" ? "text-7xl text-white font-bold " : ""}
-        ${type == "sub" ? "text-4xl text-sub font-semibold " : ""}
-        ${type == "p" ? "text-lg text-gray-400 " : ""}
+        ${
+            type == "head"
+                ? "2xl:text-7xl md:text-6xl text-4xl text-white font-bold "
+                : ""
+        }
+        ${
+            type == "sub"
+                ? "2xl:text-4xl md:text-3xl text-2xl text-sub font-semibold "
+                : ""
+        }
+        ${type == "p" ? "lg:text-lg text-md text-gray-400 " : ""}
         `}
         >
             <p className="font-code text-code italic  text-sm">{`<${tag}>`}</p>

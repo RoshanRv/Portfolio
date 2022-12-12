@@ -16,16 +16,16 @@ const Education = () => {
         >
             <div>
                 <CodeText type="head" tag="h1">
-                    <h1 className="font-cod">
+                    <h1 className="">
                         <span className="text-sec font-code">02.</span>
                         Education
                     </h1>
                 </CodeText>
 
                 {/*   Timeline     */}
-                <div className="mt-16">
+                <div className="2xl:mt-16 mt-4 md:mt-10">
                     {/*     Tagore     */}
-                    <div className="border-l-4 border-l-sec p-8  flex flex-col gap-y-4  relative">
+                    <div className="border-l-4 border-l-sec 2xl:p-8 p-4 md:p-6  flex flex-col gap-y-2 2xl:gap-y-4  relative">
                         <EducationCard
                             name="Tagore Vidyalayam Matriculation Higher Seconday
                                 School"
@@ -34,7 +34,7 @@ const Education = () => {
                         />
                     </div>
                     {/*     TVS     */}
-                    <div className="border-l-4 border-sec p-8 flex flex-col gap-y-4  relative">
+                    <div className="border-l-4 border-sec 2xl:p-8 p-4 md:p-6 flex flex-col gap-y-2 2xl:gap-y-4  relative">
                         <EducationCard
                             name="The TVS School"
                             std="11th - 12th"
@@ -42,7 +42,7 @@ const Education = () => {
                         />
                     </div>
                     {/*     KCET     */}
-                    <div className="border-l-4 border-sec p-8 flex flex-col gap-y-4  relative">
+                    <div className="border-l-4 border-sec 2xl:p-8 p-4 md:p-6 flex flex-col gap-y-2 2xl:gap-y-4  relative">
                         <EducationCard
                             name="Kamaraj College of Engineering & Technology"
                             std="B.Tech. - Artificial Intelligence & Data Science"

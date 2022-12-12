@@ -5,58 +5,62 @@ import Skill from "./Skill"
 const languages = [
     {
         name: "Javascript",
-        style: "text-5xl m-4",
+        style: " text-3xl md:text-4xl 2xl:text-5xl m-2 lg:m-4 lg:mx-6 hover:text-[#f1d43b] ",
         hoverStyle: "text-[#f1d43b]   ",
     },
     {
         name: "Typescript",
-        style: "text-4xl ",
+        style: " text-2xl md:text-3xl 2xl:text-4xl my-2 hover:text-[#174e9c] ",
         hoverStyle: "text-[#174e9c]   ",
     },
     {
         name: "ReactJS",
-        style: "text-7xl m-3",
+        style: " text-3xl md:text-5xl 2xl:text-7xl m-3 hover:text-[#00cdf2] ",
         hoverStyle: "text-[#00cdf2]   ",
     },
-    { name: "NextJS", style: "text-5xl ", hoverStyle: "text-white  " },
+    {
+        name: "NextJS",
+        style: " text-2xl md:text-4xl 2xl:text-5xl my-1 lg:mx-2 hover:text-white",
+        hoverStyle: "text-white  ",
+    },
     {
         name: "MongoDB",
-        style: "text-5xl m-6",
+        style: " text-2xl md:text-3xl 2xl:text-5xl m-3 lg:m-6 hover:text-[#4ba13e] ",
         hoverStyle: "text-[#4ba13e]    ",
     },
     {
         name: "MySql",
-        style: "text-4xl m-8",
+        style: " text-2xl md:text-3xl  2xl:text-4xl mx-3 my-2 lg:m-4 hover:text-[#f29d17] ",
         hoverStyle: "text-[#f29d17]    ",
     },
     {
         name: "NodeJS",
-        style: "text-3xl m-4 ",
+        style: " text-xl md:text-2xl 2xl:text-3xl m-3  hover:text-[#4f9640] ",
         hoverStyle: "text-[#4f9640]    ",
     },
     {
         name: "ExpressJS",
-        style: "text-4xl m-6",
+        style: " text-2xl md:text-3xl  2xl:text-4xl mx-2 my-3 lg:m-6 hover:text-white ",
         hoverStyle: "text-white  ",
     },
     {
         name: "TailwindCSS",
-        style: "text-6xl m-4",
+        style: " text-3xl md:text-4xl 2xl:text-6xl m-2 hover:text-[#35b3eb] ",
         hoverStyle: "text-[#35b3eb]    ",
     },
     {
         name: "Git",
-        style: "text-6xl m-4",
+        style: " text-3xl md:text-4xl 2xl:text-6xl m-4 hover:text-[#e44c30] ",
         hoverStyle: "text-[#e44c30]    ",
     },
     {
         name: "React Native",
-        style: "text-2xl m-1",
+        style: " text-xl  2xl:text-2xl m-1 hover:text-[#00cdf2] ",
         hoverStyle: "text-[#00cdf2]   ",
     },
     {
         name: "Socket.io",
-        style: "text-3xl m-3",
+        style: " text-xl md:text-2xl 2xl:text-3xl m-3 hover:text-white ",
         hoverStyle: "text-white  ",
     },
 ]
@@ -67,9 +71,9 @@ const About = () => {
     return (
         <section
             id="about"
-            className="flex justify-around items-center min-h-screen overflow-hidden"
+            className="md:flex justify-center items-center min-h-screen overflow-hidden gap-x-6 2xl:gap-x-10"
         >
-            <div className="md:w-5/12">
+            <div className="md:w-5/12 w-full">
                 <CodeText type="head" tag="h1">
                     <h1 className="">
                         <span className="text-sec font-code">01.</span>
@@ -77,9 +81,9 @@ const About = () => {
                     </h1>
                 </CodeText>
                 {/*        About Context       */}
-                <div className="flex flex-col gap-y-8 mt-8 w-full  ">
+                <div className="flex flex-col 2xl:gap-y-8 gap-y-4 2xl:mt-8 mt-2 md:mt-4 w-full  ">
                     <CodeText type="p" tag="p">
-                        <div className="flex flex-col gap-y-4 ">
+                        <div className="flex flex-col gap-y-2 2xl:gap-y-4 ">
                             <p>
                                 Hi, I'm Roshan Kumar. My interest in web
                                 development started in 2021. I've been learning
@@ -103,7 +107,8 @@ const About = () => {
                             recently
                         </p>
                     </CodeText>
-                    <div className="grid grid-cols-2 w-max gap-4 gap-x-8 ml-8">
+                    {/*      Skills    */}
+                    <div className="grid grid-cols-2 w-max gap-2 2xl:gap-4 gap-x-8 ml-8">
                         {languages.map((lang, i) => (
                             <h1
                                 onMouseEnter={() => setHoverState(lang.name)}
@@ -124,6 +129,7 @@ const About = () => {
                     </div>
                 </div>
             </div>
+            {/*       Right Side Skill       */}
             <Skill hoverState={hoverState} languages={languages} />
         </section>
     )
