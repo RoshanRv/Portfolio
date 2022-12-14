@@ -1,7 +1,6 @@
 import React, { useRef, useState } from "react"
 import emailjs from "emailjs-com"
 
-import Button from "./Button"
 import CodeText from "./CodeText"
 import { TbBrandGithub, TbBrandTwitter } from "react-icons/tb"
 import { HiOutlineMail } from "react-icons/hi"
