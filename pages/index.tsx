@@ -6,6 +6,7 @@ import Education from "../components/Education"
 import Header from "../components/Header"
 import HomeHero from "../components/HomeHero"
 import Logo from "../components/Logo"
+import Projects from "../components/Projects"
 import Social from "../components/Social"
 import useScroll from "../hooks/useScroll"
 
@@ -18,7 +19,7 @@ export default function Home() {
             <HomeHero />
             <About />
             <Education />
-
+            <Projects />
             <Contact />
             <Social />
         </main>
