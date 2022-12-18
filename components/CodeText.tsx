@@ -31,9 +31,9 @@ const CodeText = ({ tag, children, type, line = "multi" }: CodeTextProps) => {
         ${type == "p" ? "lg:text-lg text-md text-gray-400 " : ""}
         `}
         >
-            <p className="font-code text-code italic  text-sm">{`<${tag}>`}</p>
+            <p className="text-sm italic font-code text-code">{`<${tag}>`}</p>
             {children}
-            <p className="font-code text-code italic   text-sm">{`</${tag}>`}</p>
+            <p className="text-sm italic font-code text-code">{`</${tag}>`}</p>
         </div>
     )
 }
