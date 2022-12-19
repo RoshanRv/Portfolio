@@ -20,7 +20,7 @@ const Projects = () => {
                         <h1 className="text-white">Hello</h1>
                     </div>
                     <div className="w-screen h-[50vh] rotate-90 bg-blue-500">
-                        <h1 className="text-white">Hello</h1>
+                        <h1 className="text-white">Helo</h1>
                     </div>
                     <div className="w-20 h-[100vw] bg-blue-500"></div>
                 </div>
