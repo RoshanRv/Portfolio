@@ -14,7 +14,7 @@ export default function Home() {
     const { scrollYProgress } = useScroll()
 
     return (
-        <main className="font-disp selection:bg-sec bg-gradient-to-br from-gray-900 to-slate-900 ">
+        <main className="overflow-hidden font-disp selection:bg-sec bg-gradient-to-br from-gray-900 to-slate-900 ">
             <Header />
             <HomeHero />
             <About />
