@@ -123,7 +123,7 @@ const Contact = () => {
                 backgroundPosition: "50% 50%",
                 fill: "red",
             }}
-            className="flex flex-col justify-center items-center min-h-screen pb-8"
+            className="flex flex-col items-center justify-center min-h-screen pb-8"
         >
             <CodeText tag="h1" type="head">
                 <h1 className="">
@@ -133,7 +133,7 @@ const Contact = () => {
             </CodeText>
             <div className="flex justify-around gap-x-40">
                 {/*     Left Social Links     */}
-                <div className="flex flex-col gap-y-10 self-end">
+                <div className="flex flex-col self-end gap-y-10">
                     {/* Github  */}
                     <ContactButton link="https://github.com/RoshanRv">
                         <TbBrandGithub />
@@ -149,13 +149,13 @@ const Contact = () => {
                 <form
                     onSubmit={(e) => sendEmail(e)}
                     ref={emailRef}
-                    className="mt-10 flex flex-col gap-y-10 border-2 border-sec/50 btn-shadow transition-all duration-500 py-14 p-20 rounded-lg"
+                    className="flex flex-col p-20 mt-10 transition-all duration-500 border-2 rounded-lg gap-y-10 border-sec/50 btn-shadow py-14"
                 >
-                    <div className="flex gap-x-8 items-baseline">
+                    <div className="flex items-baseline gap-x-8">
                         {/*      Name     */}
                         <div className="flex flex-col-reverse justify-end">
                             {emailValidation.name && (
-                                <p className="text-red-700 p-1">
+                                <p className="p-1 text-red-700">
                                     Name Is Required
                                 </p>
                             )}
@@ -163,16 +163,16 @@ const Contact = () => {
                                 name="name"
                                 type="text"
                                 placeholder="Name"
-                                className="peer placeholder:text-transparent border-b-2 outline-0 p-2 text-sec bg-code  border-sub/80 placeholder-shown:bg-transparent focus:bg-code font-sm  overflow-hidden transition-all   rounded-t-sm w-80"
+                                className="p-2 overflow-hidden transition-all border-b-2 rounded-t-sm peer placeholder:text-transparent outline-0 text-sec bg-code border-sub/80 placeholder-shown:bg-transparent focus:bg-code font-sm w-80"
                             />
-                            <h1 className="peer-placeholder-shown:text-sub/80 peer-focus:text-code text-code peer-focus:text-sm text-sm peer-placeholder-shown:text-lg mb-1 peer-focus:mb-1 peer-placeholder-shown:-mb-8 transition-all ">
+                            <h1 className="mb-1 text-sm transition-all peer-placeholder-shown:text-sub/80 peer-focus:text-code text-code peer-focus:text-sm peer-placeholder-shown:text-lg peer-focus:mb-1 peer-placeholder-shown:-mb-8 ">
                                 Name
                             </h1>
                         </div>
                         {/*      Email    */}
                         <div className="flex flex-col-reverse">
                             {emailValidation.email && (
-                                <p className="text-red-700 p-1">
+                                <p className="p-1 text-red-700">
                                     Email Is Required
                                 </p>
                             )}
@@ -180,9 +180,9 @@ const Contact = () => {
                                 name="email"
                                 type="email"
                                 placeholder="Email"
-                                className="peer placeholder:text-transparent border-b-2 invalid:border-red-800 invalid:border-b-4 outline-0 p-2 text-sec bg-code  border-sub/80 placeholder-shown:bg-transparent focus:bg-code font-sm  overflow-hidden transition-all   rounded-t-sm w-80"
+                                className="p-2 overflow-hidden transition-all border-b-2 rounded-t-sm peer placeholder:text-transparent invalid:border-red-800 invalid:border-b-4 outline-0 text-sec bg-code border-sub/80 placeholder-shown:bg-transparent focus:bg-code font-sm w-80"
                             />
-                            <h1 className="peer-placeholder-shown:text-sub/80 peer-focus:text-code text-code peer-focus:text-sm text-sm peer-placeholder-shown:text-lg mb-1 peer-focus:mb-1 peer-placeholder-shown:-mb-8 transition-all ">
+                            <h1 className="mb-1 text-sm transition-all peer-placeholder-shown:text-sub/80 peer-focus:text-code text-code peer-focus:text-sm peer-placeholder-shown:text-lg peer-focus:mb-1 peer-placeholder-shown:-mb-8 ">
                                 Email
                             </h1>
                         </div>
@@ -193,16 +193,16 @@ const Contact = () => {
                             name="subject"
                             type="text"
                             placeholder="Subject"
-                            className="peer placeholder:text-transparent border-b-2 outline-0 p-2 text-sec bg-code  border-sub/80 placeholder-shown:bg-transparent focus:bg-code font-sm  overflow-hidden transition-all   rounded-t-sm w-full"
+                            className="w-full p-2 overflow-hidden transition-all border-b-2 rounded-t-sm peer placeholder:text-transparent outline-0 text-sec bg-code border-sub/80 placeholder-shown:bg-transparent focus:bg-code font-sm"
                         />
-                        <h1 className="peer-placeholder-shown:text-sub/80 peer-focus:text-code text-code peer-focus:text-sm text-sm peer-placeholder-shown:text-lg mb-1 peer-focus:mb-1 peer-placeholder-shown:-mb-8 transition-all ">
+                        <h1 className="mb-1 text-sm transition-all peer-placeholder-shown:text-sub/80 peer-focus:text-code text-code peer-focus:text-sm peer-placeholder-shown:text-lg peer-focus:mb-1 peer-placeholder-shown:-mb-8 ">
                             Subject
                         </h1>
                     </div>
                     {/*     Message    */}
                     <div className="flex flex-col-reverse">
                         {emailValidation.message && (
-                            <p className="text-red-700 p-1">
+                            <p className="p-1 text-red-700">
                                 Message Is Required
                             </p>
                         )}
@@ -211,9 +211,9 @@ const Contact = () => {
                             cols={50}
                             rows={50}
                             placeholder="Subject"
-                            className="peer placeholder:text-transparent border-b-2 outline-0 p-2 text-sec bg-code  border-sub/80 placeholder-shown:bg-transparent focus:bg-code font-sm  transition-all h-12  rounded-t-sm w-full"
+                            className="w-full h-12 p-2 transition-all border-b-2 rounded-t-sm peer placeholder:text-transparent outline-0 text-sec bg-code border-sub/80 placeholder-shown:bg-transparent focus:bg-code font-sm"
                         />
-                        <h1 className="peer-placeholder-shown:text-sub/80 peer-focus:text-code text-code peer-focus:text-sm text-sm peer-placeholder-shown:text-lg mb-1 peer-focus:mb-1 peer-placeholder-shown:-mb-8 transition-all">
+                        <h1 className="mb-1 text-sm transition-all peer-placeholder-shown:text-sub/80 peer-focus:text-code text-code peer-focus:text-sm peer-placeholder-shown:text-lg peer-focus:mb-1 peer-placeholder-shown:-mb-8">
                             Message
                         </h1>
                     </div>
@@ -236,7 +236,7 @@ const Contact = () => {
                     )}
                 </form>
                 {/*     Right Social Links     */}
-                <div className="flex flex-col gap-y-10 self-end">
+                <div className="flex flex-col self-end gap-y-10">
                     {/* Twitter  */}
                     <ContactButton link="https://twitter.com/RoshanK18328680">
                         <TbBrandTwitter />

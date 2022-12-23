@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react"
 import CodeText from "./CodeText"
 import axios from "axios"
+import { TbBrandGithub } from "react-icons/tb"
+import { FiExternalLink } from "react-icons/fi"
+import Link from "next/link"
 
 interface OwnerProp {
     login: string
@@ -125,21 +128,25 @@ const ProjectCard = ({
 }) => {
     return (
         <div
-            className={`flex my-20 ${
-                side == "left" ? "flex-row" : "flex-row-reverse"
-            } `}
+            className={`flex my-20 
+             ${side == "left" ? "flex-row" : "flex-row-reverse"} `}
         >
-            <div className="w-[30rem] h-[20rem]">
+            {/*      Img        */}
+            <div className="2xl:w-[40rem] 2xl:h-[25rem] relative peer">
+                <div className="absolute top-0 left-0 w-full h-full transition-all duration-500 bg-black/40 hover:bg-transparent peer"></div>
+
                 <img
                     src={data.img_url}
                     alt={`${data.name}_img`}
-                    className="w-full h-full"
+                    className="w-full h-full transition-all origin-center rounded-lg peer-hover:scale-105 hover:scale-110"
                 />
             </div>
-            {/*     Right Side     */}
+            {/*    Name and Desc     */}
             <div
-                className={`flex flex-col ${
-                    side == "left" ? "text-right -ml-12" : "-mr-12 "
+                className={`flex flex-col gap-y-6 z-30   transition-all  duration-500 ${
+                    side == "left"
+                        ? "text-right -ml-12 peer-hover:-translate-x-12 "
+                        : "-mr-12 peer-hover:translate-x-12"
                 }`}
             >
                 {/*     Name     */}
@@ -147,12 +154,47 @@ const ProjectCard = ({
                     <h1>{data.name}</h1>
                 </CodeText>
                 {/*      Desc    */}
-                <div className="p-6 bg-black">
+                <div className="p-6 bg-black border-2 border-sec/70">
                     <CodeText tag="p" type="p" line="multi">
                         <p>{data.description}</p>
+                        {/* </CodeText> */}
+                        {/*       tags   */}
+                        {/* <div className="flex "> */}
+                        {/* <CodeText tag="p" type="p" line="multi"> */}
+                        <div className="flex flex-wrap w-full gap-x-4">
+                            {data.topics.map((topic) => (
+                                <p className="px-2 py-1 text-sm rounded-full bg-code/70 ">
+                                    {topic}
+                                </p>
+                            ))}
+                        </div>
                     </CodeText>
                 </div>
+                {/*   Links   */}
+                <div
+                    className={`flex  gap-x-10 ${
+                        side == "left"
+                            ? "justify-end"
+                            : "justify-end flex-row-reverse "
+                    }`}
+                >
+                    {/*   Demo Link   */}
+                    <Link
+                        href={data.homepage}
+                        className="p-3 text-2xl transition-all duration-500 border-2 hover:text-code hover:scale-90 text-sub border-sec rounded-xl"
+                    >
+                        <FiExternalLink className="" />
+                    </Link>
+                    {/*    Github Link  */}
+                    <Link
+                        href={data.html_url}
+                        className="p-3 text-2xl transition-all duration-500 border-2 hover:text-code hover:scale-90 text-sub border-sec rounded-xl"
+                    >
+                        <TbBrandGithub className="" />
+                    </Link>
+                </div>
             </div>
+            {/* </div> */}
         </div>
     )
 }
