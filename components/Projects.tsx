@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from "react"
+import React, { ForwardedRef, forwardRef, useEffect, useState } from "react"
 import CodeText from "./CodeText"
 import axios from "axios"
 import { TbBrandGithub } from "react-icons/tb"
 import { FiExternalLink } from "react-icons/fi"
-import Link from "next/link"
 
 interface OwnerProp {
     login: string
@@ -28,7 +27,7 @@ interface MyProjectProp extends StarredProjectProp {
 type StarredProjects = StarredProjectProp[]
 type ProjectsProps = MyProjectProp[]
 
-const Projects = () => {
+const Projects = forwardRef((_prop, ref: ForwardedRef<HTMLElement>) => {
     const [projects, setProjects] = useState([] as ProjectsProps)
 
     //         ***** . Get Project Lang     *****
@@ -51,9 +50,7 @@ const Projects = () => {
             const imgUrl = JSON.stringify(
                 readme.data
                     .split(" ")
-                    .find((text: string) =>
-                        text.includes("user-images.githubusercontent.com")
-                    )
+                    .find((text: string) => text.includes("image"))
             )
                 .split(/[()]/)
                 .find((word) => word.includes("http"))
@@ -77,7 +74,6 @@ const Projects = () => {
             myProjects.map(async (project, i) => {
                 const languages = await getProjectLanguages(project)
                 const img_url = await getProjectImage(project)
-                console.log({ languages, img_url })
                 const projectData = { ...project, languages, img_url }
                 myProjects[i] = projectData
             })
@@ -93,7 +89,11 @@ const Projects = () => {
     }, [])
 
     return (
-        <section className="flex flex-col items-center justify-center min-h-screen ">
+        <section
+            ref={ref}
+            className="flex flex-col items-center justify-center min-h-screen "
+            id="projects"
+        >
             {/*        Title      */}
 
             <CodeText tag="h1" type="head">
@@ -104,7 +104,7 @@ const Projects = () => {
             </CodeText>
 
             {/*       Projects       */}
-            <div className="mt-28">
+            <div className="mt-8">
                 {projects.map((project, i) => (
                     <ProjectCard
                         key={i}
@@ -115,7 +115,7 @@ const Projects = () => {
             </div>
         </section>
     )
-}
+})
 
 export default Projects
 
@@ -128,22 +128,28 @@ const ProjectCard = ({
 }) => {
     return (
         <div
-            className={`flex my-20 
+            className={`flex my-32 justify-center
              ${side == "left" ? "flex-row" : "flex-row-reverse"} `}
         >
             {/*      Img        */}
-            <div className="2xl:w-[40rem] 2xl:h-[25rem] relative peer">
-                <div className="absolute top-0 left-0 w-full h-full transition-all duration-500 bg-black/40 hover:bg-transparent peer"></div>
-
-                <img
-                    src={data.img_url}
-                    alt={`${data.name}_img`}
-                    className="w-full h-full transition-all origin-center rounded-lg peer-hover:scale-105 hover:scale-110"
-                />
+            <div className="2xl:w-[40rem] 2xl:h-[25rem] md:w-[35rem] md:[h-20rem] relative peer">
+                {/* <div className="absolute top-0 left-0 w-full h-full transition-all duration-500 bg-black/40 hover:bg-transparent "></div> */}
+                <a
+                    href={data.homepage}
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    className=""
+                >
+                    <img
+                        src={data.img_url}
+                        alt={`${data.name}_img`}
+                        className="w-full h-full transition-all origin-center border-4 rounded-lg shadow-xl border-sec shadow-black/80 hover:scale-110"
+                    />
+                </a>
             </div>
             {/*    Name and Desc     */}
             <div
-                className={`flex flex-col gap-y-6 z-30   transition-all  duration-500 ${
+                className={`flex flex-col gap-y-6 z-30 max-w-[60%] md:max-w-[40%]  transition-all  duration-500 ${
                     side == "left"
                         ? "text-right -ml-12 peer-hover:-translate-x-12 "
                         : "-mr-12 peer-hover:translate-x-12"
@@ -154,16 +160,13 @@ const ProjectCard = ({
                     <h1>{data.name}</h1>
                 </CodeText>
                 {/*      Desc    */}
-                <div className="p-6 bg-black border-2 border-sec/70">
+                <div className="p-6 bg-black border-2 shadow-lg shadow-black/60 border-sec/70">
                     <CodeText tag="p" type="p" line="multi">
                         <p>{data.description}</p>
-                        {/* </CodeText> */}
-                        {/*       tags   */}
-                        {/* <div className="flex "> */}
-                        {/* <CodeText tag="p" type="p" line="multi"> */}
-                        <div className="flex flex-wrap w-full gap-x-4">
+
+                        <div className="flex flex-wrap w-full gap-4">
                             {data.topics.map((topic) => (
-                                <p className="px-2 py-1 text-sm rounded-full bg-code/70 ">
+                                <p className="px-2 py-1 text-sm transition-all rounded-full bg-code/70 hover:text-white">
                                     {topic}
                                 </p>
                             ))}
@@ -179,19 +182,23 @@ const ProjectCard = ({
                     }`}
                 >
                     {/*   Demo Link   */}
-                    <Link
+                    <a
                         href={data.homepage}
                         className="p-3 text-2xl transition-all duration-500 border-2 hover:text-code hover:scale-90 text-sub border-sec rounded-xl"
+                        rel="noopener noreferrer"
+                        target="_blank"
                     >
                         <FiExternalLink className="" />
-                    </Link>
+                    </a>
                     {/*    Github Link  */}
-                    <Link
+                    <a
                         href={data.html_url}
                         className="p-3 text-2xl transition-all duration-500 border-2 hover:text-code hover:scale-90 text-sub border-sec rounded-xl"
+                        rel="noopener noreferrer"
+                        target="_blank"
                     >
                         <TbBrandGithub className="" />
-                    </Link>
+                    </a>
                 </div>
             </div>
             {/* </div> */}
