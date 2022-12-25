@@ -52,6 +52,11 @@ body {
 }
 
 /*      Header       */
+.active-sec {
+    -webkit-box-shadow: -4px 4px 0px 0px var(--sec);
+    -moz-box-shadow: -4px 4px 0px 0px var(--sec);
+    box-shadow: 4px 4px 0px 0px var(--sec);
+}
 
 .head-btn-shadow:hover {
     -webkit-box-shadow: -4px 4px 0px 0px var(--sec);
