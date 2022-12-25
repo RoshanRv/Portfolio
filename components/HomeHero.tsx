@@ -1,11 +1,14 @@
-import React from "react"
+import React, { ForwardedRef, forwardRef } from "react"
+import { HomeProp } from "../pages"
 import Button from "./Button"
 import CodeText from "./CodeText"
 import Goal from "./Goal"
 
-const HomeHero = () => {
+const HomeHero = forwardRef((_prop, ref: ForwardedRef<HTMLDivElement>) => {
     return (
         <div
+            ref={ref}
+            id={"hero"}
             style={{
                 backgroundImage: `url('Rv.svg')`,
                 backgroundSize: "30%",
@@ -13,7 +16,7 @@ const HomeHero = () => {
                 backgroundPosition: "40% 55%",
                 fill: "red",
             }}
-            className="min-h-screen w-full  -z-50 flex justify-around items-center "
+            className="flex items-center justify-around w-full min-h-screen -z-50 "
         >
             <div className="flex flex-col gap-y-4">
                 <CodeText tag="p" type="p" line="single">
@@ -25,11 +28,11 @@ const HomeHero = () => {
                 <CodeText tag="h3" type="sub" line="single">
                     <p className="">Full-Stack Developer</p>
                 </CodeText>
-                <Button text=" Hire Me " />
+                <Button text=" Hire Me " link={"#contact"} />
             </div>
             <Goal />
         </div>
     )
-}
+})
 
 export default HomeHero

@@ -1,4 +1,5 @@
-import React, { useState } from "react"
+import React, { ForwardedRef, forwardRef, useState } from "react"
+import { HomeProp } from "../pages"
 import CodeText from "./CodeText"
 import Skill from "./Skill"
 
@@ -65,15 +66,16 @@ const languages = [
     },
 ]
 
-const About = () => {
+const About = forwardRef((_prop, ref: ForwardedRef<HTMLElement>) => {
     const [hoverState, setHoverState] = useState("")
 
     return (
         <section
+            ref={ref}
             id="about"
-            className="md:flex justify-center items-center min-h-screen overflow-hidden gap-x-6 2xl:gap-x-10"
+            className="items-center justify-center min-h-screen overflow-hidden md:flex gap-x-6 2xl:gap-x-10"
         >
-            <div className="md:w-5/12 w-full">
+            <div className="w-full md:w-5/12">
                 <CodeText type="head" tag="h1">
                     <h1 className="">
                         <span className="text-sec font-code">01.</span>
@@ -81,7 +83,7 @@ const About = () => {
                     </h1>
                 </CodeText>
                 {/*        About Context       */}
-                <div className="flex flex-col 2xl:gap-y-8 gap-y-4 2xl:mt-8 mt-2 md:mt-4 w-full  ">
+                <div className="flex flex-col w-full mt-2 2xl:gap-y-8 gap-y-4 2xl:mt-8 md:mt-4 ">
                     <CodeText type="p" tag="p">
                         <div className="flex flex-col gap-y-2 2xl:gap-y-4 ">
                             <p>
@@ -108,7 +110,7 @@ const About = () => {
                         </p>
                     </CodeText>
                     {/*      Skills    */}
-                    <div className="grid grid-cols-2 w-max gap-2 2xl:gap-4 gap-x-8 ml-8">
+                    <div className="grid grid-cols-2 gap-2 ml-8 w-max 2xl:gap-4 gap-x-8">
                         {languages.map((lang, i) => (
                             <h1
                                 onMouseEnter={() => setHoverState(lang.name)}
@@ -117,11 +119,11 @@ const About = () => {
                                 className={`text-lg text-gray-400 flex items-center gap-x-2 group hover:text-white transition-all font-code cursor-pointer`}
                             >
                                 <div className="h-[5px] w-1 rounded-full bg-sec "></div>
-                                <span className="text-code group-hover:text-sub transition-all">
+                                <span className="transition-all text-code group-hover:text-sub">
                                     {" < "}
                                 </span>
                                 {lang.name}
-                                <span className="text-code group-hover:text-sub transition-all">
+                                <span className="transition-all text-code group-hover:text-sub">
                                     {" />"}
                                 </span>
                             </h1>
@@ -133,6 +135,6 @@ const About = () => {
             <Skill hoverState={hoverState} languages={languages} />
         </section>
     )
-}
+})
 
 export default About

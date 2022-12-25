@@ -1,17 +1,19 @@
-import React, { useRef, useState } from "react"
+import React, { ForwardedRef, forwardRef, useRef, useState } from "react"
 import emailjs from "emailjs-com"
 
 import CodeText from "./CodeText"
 import { TbBrandGithub, TbBrandTwitter } from "react-icons/tb"
 import { HiOutlineMail } from "react-icons/hi"
 import { FiLinkedin } from "react-icons/fi"
+import { ImProfile } from "react-icons/im"
+import { HomeProp } from "../pages"
 
 interface EmailResult {
     message: string | null
     style: string
 }
 
-const Contact = () => {
+const Contact = forwardRef((_prop, ref: ForwardedRef<HTMLElement>) => {
     const emailRef = useRef<any>(null)
 
     const [emailResult, setEmailResult] = useState({} as EmailResult)
@@ -115,6 +117,7 @@ const Contact = () => {
 
     return (
         <section
+            ref={ref}
             id="contact"
             style={{
                 // backgroundImage: `url('college.svg')`,
@@ -142,6 +145,11 @@ const Contact = () => {
                     {/*     Linked In     */}
                     <ContactButton link="https://www.linkedin.com/in/roshan-kumar--/">
                         <FiLinkedin />
+                    </ContactButton>
+
+                    {/*      Resume Button    */}
+                    <ContactButton link="https://drive.google.com/file/d/18SiR0b2RnSoMEhCFaB6cugfhv4Pd5492/view?usp=sharing">
+                        <ImProfile />
                     </ContactButton>
                 </div>
 
@@ -250,7 +258,7 @@ const Contact = () => {
             </div>
         </section>
     )
-}
+})
 
 export default Contact
 

@@ -1,9 +1,11 @@
-import React from "react"
+import React, { ForwardedRef, forwardRef, LegacyRef, useRef } from "react"
+import { HomeProp } from "../pages"
 import CodeText from "./CodeText"
 
-const Education = () => {
+const Education = forwardRef((_prop, ref: ForwardedRef<HTMLElement>) => {
     return (
         <section
+            ref={ref}
             id="education"
             style={{
                 backgroundImage: `url('college.svg')`,
@@ -12,7 +14,7 @@ const Education = () => {
                 backgroundPosition: "50% 50%",
                 fill: "red",
             }}
-            className="flex justify-center items-center min-h-screen pb-8"
+            className="flex items-center justify-center min-h-screen pb-8"
         >
             <div>
                 <CodeText type="head" tag="h1">
@@ -23,9 +25,9 @@ const Education = () => {
                 </CodeText>
 
                 {/*   Timeline     */}
-                <div className="2xl:mt-16 mt-4 md:mt-10">
+                <div className="mt-4 2xl:mt-16 md:mt-10">
                     {/*     Tagore     */}
-                    <div className="border-l-4 border-l-sec 2xl:p-8 p-4 md:p-6  flex flex-col gap-y-2 2xl:gap-y-4  relative">
+                    <div className="relative flex flex-col p-4 border-l-4 border-l-sec 2xl:p-8 md:p-6 gap-y-2 2xl:gap-y-4">
                         <EducationCard
                             name="Tagore Vidyalayam Matriculation Higher Seconday
                                 School"
@@ -34,7 +36,7 @@ const Education = () => {
                         />
                     </div>
                     {/*     TVS     */}
-                    <div className="border-l-4 border-sec 2xl:p-8 p-4 md:p-6 flex flex-col gap-y-2 2xl:gap-y-4  relative">
+                    <div className="relative flex flex-col p-4 border-l-4 border-sec 2xl:p-8 md:p-6 gap-y-2 2xl:gap-y-4">
                         <EducationCard
                             name="The TVS School"
                             std="11th - 12th"
@@ -42,7 +44,7 @@ const Education = () => {
                         />
                     </div>
                     {/*     KCET     */}
-                    <div className="border-l-4 border-sec 2xl:p-8 p-4 md:p-6 flex flex-col gap-y-2 2xl:gap-y-4  relative">
+                    <div className="relative flex flex-col p-4 border-l-4 border-sec 2xl:p-8 md:p-6 gap-y-2 2xl:gap-y-4">
                         <EducationCard
                             name="Kamaraj College of Engineering & Technology"
                             std="B.Tech. - Artificial Intelligence & Data Science"
@@ -54,7 +56,7 @@ const Education = () => {
             </div>
         </section>
     )
-}
+})
 
 export default Education
 
@@ -92,8 +94,8 @@ const Year = ({ year, end = false }: { year: string; end?: boolean }) => {
             }
             `}
         >
-            <h1 className="text-white text-2xl font-semibold">{year}</h1>
-            <div className="rounded-full w-6 h-6 bg-code border-2 border-sec "></div>
+            <h1 className="text-2xl font-semibold text-white">{year}</h1>
+            <div className="w-6 h-6 border-2 rounded-full bg-code border-sec "></div>
         </div>
     )
 }
