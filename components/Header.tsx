@@ -47,11 +47,11 @@ const Header = ({ activeSection }: { activeSection: string | null }) => {
         <>
             {/*       Lap/ Tab Nav       */}
             <nav
-                className={`fixed z-50 left-0 shadow-lg md:shadow-none  w-full  items-center justify-around  py-4 bg-gray-900 transition-all duration-500 hidden md:flex ${
+                className={`fixed z-50 left-0  w-full  items-center justify-around  py-4 bg-gray-900 transition-all duration-500 hidden md:flex ${
                     scrollYProgress > 8 ? "shadow-md" : ""
                 } ${
                     !isMovingUp && scrollYProgress > 8 ? "-top-full" : "top-0"
-                } shadow-black/80
+                } shadow-black/60
             
             `}
             >
@@ -128,7 +128,7 @@ l-49 -30 -284 -3 -283 -3 0 -415 0 -414 90 0 90 0 0 330 0 330 193 0 c224 0
 
             {/*       Mob Nav       */}
             <nav
-                className={`fixed z-50 w-full bg-gray-900 shadow-lg md:hidden transition-all duration-500 ${
+                className={`fixed z-50 w-full bg-gray-900  md:hidden transition-all duration-500 shadow-black/50 ${
                     scrollYProgress > 8 ? "shadow-md" : ""
                 } ${
                     !isMovingUp && scrollYProgress > 8 ? "-top-full" : "top-0"

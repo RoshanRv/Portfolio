@@ -150,8 +150,8 @@ const ProjectCard = ({
             <div
                 className={`flex flex-col gap-y-6 z-30  md:max-w-[40%] w-full transition-all  duration-500 ${
                     side == "left"
-                        ? "text-right md:-ml-12 peer-hover:-translate-x-12 "
-                        : "md:-mr-12 peer-hover:translate-x-12"
+                        ? "text-right md:-ml-12 md:peer-hover:-translate-x-12 "
+                        : "md:-mr-12 md:peer-hover:translate-x-12"
                 }`}
             >
                 {/*     Name  for tab/lap   */}
