@@ -73,9 +73,9 @@ const About = forwardRef((_prop, ref: ForwardedRef<HTMLElement>) => {
         <section
             ref={ref}
             id="about"
-            className="items-center justify-center min-h-screen overflow-hidden md:flex gap-x-6 2xl:gap-x-10"
+            className="relative z-0 flex flex-col-reverse items-center justify-center min-h-screen px-6 mb-10 overflow-hidden md:mb-0 md:flex-row gap-x-6 2xl:gap-x-10"
         >
-            <div className="w-full md:w-5/12">
+            <div className="z-40 w-full md:w-5/12 ">
                 <CodeText type="head" tag="h1">
                     <h1 className="">
                         <span className="text-sec font-code">01.</span>
@@ -110,13 +110,13 @@ const About = forwardRef((_prop, ref: ForwardedRef<HTMLElement>) => {
                         </p>
                     </CodeText>
                     {/*      Skills    */}
-                    <div className="grid grid-cols-2 gap-2 ml-8 w-max 2xl:gap-4 gap-x-8">
+                    <div className="grid grid-cols-1 gap-2 ml-6 md:grid-cols-2 md:ml-8 w-max 2xl:gap-4 gap-x-8">
                         {languages.map((lang, i) => (
                             <h1
                                 onMouseEnter={() => setHoverState(lang.name)}
                                 onMouseLeave={() => setHoverState("")}
                                 key={i}
-                                className={`text-lg text-gray-400 flex items-center gap-x-2 group hover:text-white transition-all font-code cursor-pointer`}
+                                className={`text-lg text-gray-400 flex items-center gap-x-2 group hover:text-white transition-all font-code cursor-pointer z-50`}
                             >
                                 <div className="h-[5px] w-1 rounded-full bg-sec "></div>
                                 <span className="transition-all text-code group-hover:text-sub">
