@@ -91,7 +91,7 @@ const Projects = forwardRef((_prop, ref: ForwardedRef<HTMLElement>) => {
     return (
         <section
             ref={ref}
-            className="flex flex-col items-center justify-center min-h-screen "
+            className="flex flex-col items-center justify-center min-h-screen px-3 "
             id="projects"
         >
             {/*        Title      */}
@@ -104,7 +104,7 @@ const Projects = forwardRef((_prop, ref: ForwardedRef<HTMLElement>) => {
             </CodeText>
 
             {/*       Projects       */}
-            <div className="mt-8">
+            <div className="mt-0 md:mt-4">
                 {projects.map((project, i) => (
                     <ProjectCard
                         key={i}
@@ -128,12 +128,11 @@ const ProjectCard = ({
 }) => {
     return (
         <div
-            className={`flex my-32 justify-center
-             ${side == "left" ? "flex-row" : "flex-row-reverse"} `}
+            className={`flex flex-col gap-y-4 my-32 justify-center
+             ${side == "left" ? "md:flex-row" : "md:flex-row-reverse"} `}
         >
             {/*      Img        */}
             <div className="2xl:w-[40rem] 2xl:h-[25rem] md:w-[35rem] md:[h-20rem] relative peer">
-                {/* <div className="absolute top-0 left-0 w-full h-full transition-all duration-500 bg-black/40 hover:bg-transparent "></div> */}
                 <a
                     href={data.homepage}
                     rel="noopener noreferrer"
@@ -143,30 +142,40 @@ const ProjectCard = ({
                     <img
                         src={data.img_url}
                         alt={`${data.name}_img`}
-                        className="w-full h-full transition-all origin-center border-4 rounded-lg shadow-xl border-sec shadow-black/80 hover:scale-110"
+                        className="w-full h-full transition-all origin-center border-2 rounded-lg shadow-xl md:border-4 border-sec shadow-black/80 hover:scale-110"
                     />
                 </a>
             </div>
             {/*    Name and Desc     */}
             <div
-                className={`flex flex-col gap-y-6 z-30 max-w-[60%] md:max-w-[40%]  transition-all  duration-500 ${
+                className={`flex flex-col gap-y-6 z-30  md:max-w-[40%] w-full transition-all  duration-500 ${
                     side == "left"
-                        ? "text-right -ml-12 peer-hover:-translate-x-12 "
-                        : "-mr-12 peer-hover:translate-x-12"
+                        ? "text-right md:-ml-12 peer-hover:-translate-x-12 "
+                        : "md:-mr-12 peer-hover:translate-x-12"
                 }`}
             >
-                {/*     Name     */}
-                <CodeText tag="h3" type="sub">
-                    <h1>{data.name}</h1>
-                </CodeText>
+                {/*     Name  for tab/lap   */}
+                <div className="hidden md:block">
+                    <CodeText tag="h3" type="sub">
+                        <h1>{data.name}</h1>
+                    </CodeText>
+                </div>
+
                 {/*      Desc    */}
+
                 <div className="p-6 bg-black border-2 shadow-lg shadow-black/60 border-sec/70">
+                    {/*     Name  mob   */}
+                    <div className="block mb-2 md:hidden">
+                        <CodeText tag="h3" type="sub">
+                            <h1>{data.name}</h1>
+                        </CodeText>
+                    </div>
                     <CodeText tag="p" type="p" line="multi">
                         <p>{data.description}</p>
-
+                        {/*     topics     */}
                         <div className="flex flex-wrap w-full gap-4">
                             {data.topics.map((topic) => (
-                                <p className="px-2 py-1 text-sm transition-all rounded-full bg-code/70 hover:text-white">
+                                <p className="px-2 py-1 text-sm transition-all rounded-full md:text-sm bg-code/70 hover:text-white">
                                     {topic}
                                 </p>
                             ))}

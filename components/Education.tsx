@@ -74,10 +74,10 @@ const EducationCard = ({
             <Year year={year} />
 
             <CodeText type="sub" tag="h3">
-                <h1 className="text-lg">{name}</h1>
+                <h1 className="text-lg 2xl:text-4xl md:text-3xl">{name}</h1>
             </CodeText>
             <CodeText type="p" tag="p" line="single">
-                <p className="text-sm">{std}</p>
+                <p className="text-sm md:text-base lg:text-lg">{std}</p>
             </CodeText>
         </>
     )
