@@ -14,7 +14,7 @@ const Education = forwardRef((_prop, ref: ForwardedRef<HTMLElement>) => {
                 backgroundPosition: "50% 50%",
                 fill: "red",
             }}
-            className="flex items-center justify-center min-h-screen pb-8"
+            className="flex items-center justify-center min-h-screen px-4 pb-8"
         >
             <div>
                 <CodeText type="head" tag="h1">
@@ -25,9 +25,9 @@ const Education = forwardRef((_prop, ref: ForwardedRef<HTMLElement>) => {
                 </CodeText>
 
                 {/*   Timeline     */}
-                <div className="mt-4 2xl:mt-16 md:mt-10">
+                <div className="mt-8 ml-16 md:ml-0 2xl:mt-16 md:mt-10">
                     {/*     Tagore     */}
-                    <div className="relative flex flex-col p-4 border-l-4 border-l-sec 2xl:p-8 md:p-6 gap-y-2 2xl:gap-y-4">
+                    <div className="relative flex flex-col p-4 border-l-2 md:border-l-4 border-l-sec 2xl:p-8 md:p-6 gap-y-2 2xl:gap-y-4">
                         <EducationCard
                             name="Tagore Vidyalayam Matriculation Higher Seconday
                                 School"
@@ -36,7 +36,7 @@ const Education = forwardRef((_prop, ref: ForwardedRef<HTMLElement>) => {
                         />
                     </div>
                     {/*     TVS     */}
-                    <div className="relative flex flex-col p-4 border-l-4 border-sec 2xl:p-8 md:p-6 gap-y-2 2xl:gap-y-4">
+                    <div className="relative flex flex-col p-4 border-l-2 md:border-l-4 border-sec 2xl:p-8 md:p-6 gap-y-2 2xl:gap-y-4">
                         <EducationCard
                             name="The TVS School"
                             std="11th - 12th"
@@ -44,7 +44,7 @@ const Education = forwardRef((_prop, ref: ForwardedRef<HTMLElement>) => {
                         />
                     </div>
                     {/*     KCET     */}
-                    <div className="relative flex flex-col p-4 border-l-4 border-sec 2xl:p-8 md:p-6 gap-y-2 2xl:gap-y-4">
+                    <div className="relative flex flex-col p-4 border-l-2 md:border-l-4 border-sec 2xl:p-8 md:p-6 gap-y-2 2xl:gap-y-4">
                         <EducationCard
                             name="Kamaraj College of Engineering & Technology"
                             std="B.Tech. - Artificial Intelligence & Data Science"
@@ -74,10 +74,10 @@ const EducationCard = ({
             <Year year={year} />
 
             <CodeText type="sub" tag="h3">
-                <h1>{name}</h1>
+                <h1 className="text-lg">{name}</h1>
             </CodeText>
             <CodeText type="p" tag="p" line="single">
-                <p className="">{std}</p>
+                <p className="text-sm">{std}</p>
             </CodeText>
         </>
     )
@@ -86,7 +86,7 @@ const EducationCard = ({
 const Year = ({ year, end = false }: { year: string; end?: boolean }) => {
     return (
         <div
-            className={`absolute  left-0  flex items-center gap-x-6
+            className={`absolute  left-0  flex items-center gap-x-2 md:gap-x-6
             ${
                 end
                     ? "top-full -translate-y-1/2 -translate-x-[92%] "
@@ -94,8 +94,10 @@ const Year = ({ year, end = false }: { year: string; end?: boolean }) => {
             }
             `}
         >
-            <h1 className="text-2xl font-semibold text-white">{year}</h1>
-            <div className="w-6 h-6 border-2 rounded-full bg-code border-sec "></div>
+            <h1 className="text-sm font-semibold text-white md:text-2xl">
+                {year}
+            </h1>
+            <div className="w-4 h-4 border rounded-full md:border-2 md:w-6 md:h-6 bg-code border-sec "></div>
         </div>
     )
 }
