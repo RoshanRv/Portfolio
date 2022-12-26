@@ -16,7 +16,7 @@ const HomeHero = forwardRef((_prop, ref: ForwardedRef<HTMLDivElement>) => {
                 backgroundPosition: "40% 55%",
                 fill: "red",
             }}
-            className="flex items-center justify-around w-full min-h-screen -z-50 "
+            className="flex flex-col items-center justify-center w-full min-h-screen bg-contain md:flex-row -z-50 gap-y-10"
         >
             <div className="flex flex-col gap-y-4">
                 <CodeText tag="p" type="p" line="single">

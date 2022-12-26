@@ -11,7 +11,7 @@ const Social = () => {
     return (
         <motion.div
             style={{ bottom: `calc(${scrollYProgress}% + 5rem)` }}
-            className="fixed  left-6 text-[1.6rem] transition-all duration-500"
+            className="fixed  left-6 text-[1.6rem] transition-all duration-500 hidden md:block "
         >
             <div className="h-screen w-[1px] bg-gray-800 absolute -translate-x-1/2 left-1/2 -top-10 -translate-y-full"></div>
             <div className="flex flex-col gap-y-8">
