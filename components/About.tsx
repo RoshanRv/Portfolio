@@ -68,7 +68,7 @@ const languages = [
     },
 ]
 
-const About = forwardRef(function about(_prop, ref: ForwardedRef<HTMLElement>) {
+const About = forwardRef(function About(_prop, ref: ForwardedRef<HTMLElement>) {
     const [hoverState, setHoverState] = useState("")
 
     return (

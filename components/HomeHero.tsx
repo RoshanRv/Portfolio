@@ -32,7 +32,7 @@ export const item: Variants = {
     },
 }
 
-const HomeHero = forwardRef(function homeHero(
+const HomeHero = forwardRef(function HomeHero(
     _prop,
     ref: ForwardedRef<HTMLDivElement>
 ) {

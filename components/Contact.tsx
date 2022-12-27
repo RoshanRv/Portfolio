@@ -15,7 +15,7 @@ interface EmailResult {
     style: string
 }
 
-const Contact = forwardRef(function contact(
+const Contact = forwardRef(function Contact(
     _prop,
     ref: ForwardedRef<HTMLElement>
 ) {

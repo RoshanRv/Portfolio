@@ -4,7 +4,7 @@ import { HomeProp } from "../pages"
 import CodeText from "./CodeText"
 import { container, item } from "./HomeHero"
 
-const Education = forwardRef(function education(
+const Education = forwardRef(function Education(
     _prop,
     ref: ForwardedRef<HTMLElement>
 ) {

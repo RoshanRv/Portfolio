@@ -29,7 +29,7 @@ interface MyProjectProp extends StarredProjectProp {
 type StarredProjects = StarredProjectProp[]
 type ProjectsProps = MyProjectProp[]
 
-const Projects = forwardRef(function projects(
+const Projects = forwardRef(function Projects(
     _prop,
     ref: ForwardedRef<HTMLElement>
 ) {
