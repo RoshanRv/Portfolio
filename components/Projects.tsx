@@ -3,6 +3,8 @@ import CodeText from "./CodeText"
 import axios from "axios"
 import { TbBrandGithub } from "react-icons/tb"
 import { FiExternalLink } from "react-icons/fi"
+import { motion, Variants } from "framer-motion"
+import { item } from "./HomeHero"
 
 interface OwnerProp {
     login: string
@@ -95,13 +97,19 @@ const Projects = forwardRef((_prop, ref: ForwardedRef<HTMLElement>) => {
             id="projects"
         >
             {/*        Title      */}
-
-            <CodeText tag="h1" type="head">
-                <h1 className="">
-                    <span className="text-sec font-code ">03.</span>
-                    Projects
-                </h1>
-            </CodeText>
+            <motion.div
+                variants={item}
+                initial={"hidden"}
+                whileInView={"show"}
+                className=""
+            >
+                <CodeText tag="h1" type="head">
+                    <h1 className="">
+                        <span className="text-sec font-code ">03.</span>
+                        Projects
+                    </h1>
+                </CodeText>
+            </motion.div>
 
             {/*       Projects       */}
             <div className="mt-0 md:mt-4">
@@ -119,6 +127,26 @@ const Projects = forwardRef((_prop, ref: ForwardedRef<HTMLElement>) => {
 
 export default Projects
 
+//      animation
+
+const projectAni: Variants = {
+    hiddenLeft: {
+        x: "-100%",
+    },
+    hiddenRight: {
+        x: "100%",
+    },
+    show: {
+        x: 0,
+        transition: {
+            duration: 0.2,
+            damping: 15,
+            bounce: 0.7,
+            type: "spring",
+        },
+    },
+}
+
 const ProjectCard = ({
     data,
     side,
@@ -127,7 +155,10 @@ const ProjectCard = ({
     side: "left" | "right"
 }) => {
     return (
-        <div
+        <motion.div
+            variants={projectAni}
+            initial={side == "left" ? "hiddenLeft" : "hiddenRight"}
+            whileInView={"show"}
             className={`flex flex-col gap-y-4 my-32 justify-center
              ${side == "left" ? "md:flex-row" : "md:flex-row-reverse"} `}
         >
@@ -211,6 +242,6 @@ const ProjectCard = ({
                 </div>
             </div>
             {/* </div> */}
-        </div>
+        </motion.div>
     )
 }
