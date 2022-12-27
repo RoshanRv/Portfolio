@@ -3,6 +3,7 @@ import { motion, Variants } from "framer-motion"
 import Button from "./Button"
 import CodeText from "./CodeText"
 import Goal from "./Goal"
+import { ContactButton } from "./Contact"
 
 //  animation
 export const container: Variants = {
@@ -68,8 +69,8 @@ const HomeHero = forwardRef((_prop, ref: ForwardedRef<HTMLDivElement>) => {
                         <p className="">Full-Stack Developer</p>
                     </CodeText>
                 </motion.div>
-                <motion.div className="mt-8 hover:scale-15-" variants={item}>
-                    <Button text=" Hire Me " link={"#contact"} />
+                <motion.div className="flex mt-8 " variants={item} style={{}}>
+                    <Button link={"#contact"}>{" Hire Me "}</Button>
                 </motion.div>
             </motion.div>
             <Goal />

@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react"
 import { BiMenu } from "react-icons/bi"
 import Link from "next/link"
 import useScroll from "../hooks/useScroll"
+import { motion } from "framer-motion"
 
 const HeaderButton = ({
     name,
@@ -46,7 +47,9 @@ const Header = ({ activeSection }: { activeSection: string | null }) => {
     return (
         <>
             {/*       Lap/ Tab Nav       */}
-            <nav
+            <motion.nav
+                initial={{ y: -300 }}
+                animate={{ y: 0 }}
                 className={`fixed z-50 left-0  w-full  items-center justify-around  py-4 bg-gray-900 transition-all duration-500 hidden md:flex ${
                     scrollYProgress > 8 ? "shadow-md" : ""
                 } ${
@@ -124,7 +127,7 @@ l-49 -30 -284 -3 -283 -3 0 -415 0 -414 90 0 90 0 0 330 0 330 193 0 c224 0
                     num={"4"}
                     activeSection={activeSection}
                 />
-            </nav>
+            </motion.nav>
 
             {/*       Mob Nav       */}
             <nav

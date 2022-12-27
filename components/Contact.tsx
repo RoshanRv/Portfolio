@@ -182,7 +182,7 @@ const Contact = forwardRef((_prop, ref: ForwardedRef<HTMLElement>) => {
                     whileInView={"show"}
                     onSubmit={(e) => sendEmail(e)}
                     ref={emailRef}
-                    className="flex flex-col p-6 mt-10 transition-all duration-500 border-2 rounded-lg md:p-20 gap-y-10 border-sec/50 btn-shadow md:py-14"
+                    className="flex flex-col p-6 mt-10 transition-all duration-500 border-2 md:p-20 gap-y-10 border-sec/50 btn-shadow md:py-14"
                 >
                     <div className="flex flex-col items-baseline w-full gap-8 md:flex-row">
                         {/*      Name     */}
@@ -332,13 +332,13 @@ interface ContactButtonProp {
     link: string
 }
 
-const ContactButton = ({ children, link }: ContactButtonProp) => {
+export const ContactButton = ({ children, link }: ContactButtonProp) => {
     return (
         <a
             href={link}
             rel="noopener noreferrer"
             target="_blank"
-            className={`border-sec border-2  p-4 rounded-2xl text-sub hover:text-code  relative transiton-all  w-max after:absolute after:w-12 after:h-3 after:contents-[''] after:bg-gray-900 after:-top-1 after:-right-1 hover:after:w-0 after:transition-all before:absolute before:w-12 before:h-3 before:contents-[''] before:bg-gray-900 before:-bottom-1 before:-left-1 hover:before:w-0 before:transition-all shadow-md duration-500 hover:shadow-sec hover:scale-110 font-code my-4 btn-shadow outline-0  text-2xl md:text-4xl`}
+            className={`border-sec border-2  p-4  text-sub hover:text-code  relative transiton-all  w-max after:absolute after:w-12 after:h-3 after:contents-[''] after:bg-gray-900 after:-top-1 after:-right-1 hover:after:w-0 after:transition-all before:absolute before:w-12 before:h-3 before:contents-[''] before:bg-gray-900 before:-bottom-1 before:-left-1 hover:before:w-0 before:transition-all shadow-md duration-500 hover:shadow-sec hover:scale-110 font-code my-4 btn-shadow outline-0  text-2xl md:text-4xl`}
         >
             {children}
         </a>

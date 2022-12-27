@@ -173,7 +173,7 @@ const ProjectCard = ({
                     <img
                         src={data.img_url}
                         alt={`${data.name}_img`}
-                        className="w-full h-full transition-all origin-center border-2 rounded-lg shadow-xl md:border-4 border-sec shadow-black/80 hover:scale-110"
+                        className="w-full h-full transition-all origin-center border-2 shadow-xl roundd-lg md:border-4 border-sec shadow-black/80 hover:scale-110"
                     />
                 </a>
             </div>
@@ -224,7 +224,7 @@ const ProjectCard = ({
                     {/*   Demo Link   */}
                     <a
                         href={data.homepage}
-                        className="p-3 text-2xl transition-all duration-500 border-2 hover:text-code hover:scale-90 text-sub border-sec rounded-xl"
+                        className="p-3 text-2xl transition-all duration-500 border-2 hover:text-code hover:scale-90 text-sub border-sec rouned-xl"
                         rel="noopener noreferrer"
                         target="_blank"
                     >
@@ -233,7 +233,7 @@ const ProjectCard = ({
                     {/*    Github Link  */}
                     <a
                         href={data.html_url}
-                        className="p-3 text-2xl transition-all duration-500 border-2 hover:text-code hover:scale-90 text-sub border-sec rounded-xl"
+                        className="p-3 text-2xl transition-all duration-500 border-2 hover:text-code hover:scale-90 text-sub border-sec roundd-xl"
                         rel="noopener noreferrer"
                         target="_blank"
                     >
