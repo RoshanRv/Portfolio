@@ -1,6 +1,8 @@
+import { motion } from "framer-motion"
 import React, { ForwardedRef, forwardRef, LegacyRef, useRef } from "react"
 import { HomeProp } from "../pages"
 import CodeText from "./CodeText"
+import { container, item } from "./HomeHero"
 
 const Education = forwardRef((_prop, ref: ForwardedRef<HTMLElement>) => {
     return (
@@ -16,44 +18,59 @@ const Education = forwardRef((_prop, ref: ForwardedRef<HTMLElement>) => {
             }}
             className="flex items-center justify-center min-h-screen px-4 pb-8"
         >
-            <div>
-                <CodeText type="head" tag="h1">
-                    <h1 className="">
-                        <span className="text-sec font-code">02.</span>
-                        Education
-                    </h1>
-                </CodeText>
+            <motion.div
+                variants={container}
+                initial={"hidden"}
+                whileInView={"show"}
+            >
+                <motion.div variants={item} className="">
+                    <CodeText type="head" tag="h1">
+                        <h1 className="">
+                            <span className="text-sec font-code">02.</span>
+                            Education
+                        </h1>
+                    </CodeText>
+                </motion.div>
 
                 {/*   Timeline     */}
                 <div className="mt-8 ml-16 md:ml-0 2xl:mt-16 md:mt-10">
                     {/*     Tagore     */}
-                    <div className="relative flex flex-col p-4 border-l-2 md:border-l-4 border-l-sec 2xl:p-8 md:p-6 gap-y-2 2xl:gap-y-4">
+                    <motion.div
+                        variants={item}
+                        className="relative flex flex-col p-4 border-l-2 md:border-l-4 border-l-sec 2xl:p-8 md:p-6 gap-y-2 2xl:gap-y-4"
+                    >
                         <EducationCard
                             name="Tagore Vidyalayam Matriculation Higher Seconday
                                 School"
                             std="LKG - 10th"
                             year={"2008"}
                         />
-                    </div>
+                    </motion.div>
                     {/*     TVS     */}
-                    <div className="relative flex flex-col p-4 border-l-2 md:border-l-4 border-sec 2xl:p-8 md:p-6 gap-y-2 2xl:gap-y-4">
+                    <motion.div
+                        variants={item}
+                        className="relative flex flex-col p-4 border-l-2 md:border-l-4 border-sec 2xl:p-8 md:p-6 gap-y-2 2xl:gap-y-4"
+                    >
                         <EducationCard
                             name="The TVS School"
                             std="11th - 12th"
                             year={"2019"}
                         />
-                    </div>
+                    </motion.div>
                     {/*     KCET     */}
-                    <div className="relative flex flex-col p-4 border-l-2 md:border-l-4 border-sec 2xl:p-8 md:p-6 gap-y-2 2xl:gap-y-4">
+                    <motion.div
+                        variants={item}
+                        className="relative flex flex-col p-4 border-l-2 md:border-l-4 border-sec 2xl:p-8 md:p-6 gap-y-2 2xl:gap-y-4"
+                    >
                         <EducationCard
                             name="Kamaraj College of Engineering & Technology"
                             std="B.Tech. - Artificial Intelligence & Data Science"
                             year={"2021"}
                         />
                         <Year year="Present" end={true} />
-                    </div>
+                    </motion.div>
                 </div>
-            </div>
+            </motion.div>
         </section>
     )
 })
