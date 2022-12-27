@@ -2,6 +2,8 @@ import React, { ForwardedRef, forwardRef, useState } from "react"
 import { HomeProp } from "../pages"
 import CodeText from "./CodeText"
 import Skill from "./Skill"
+import { motion, Variants } from "framer-motion"
+import { container, item } from "./HomeHero"
 
 const languages = [
     {
@@ -75,42 +77,61 @@ const About = forwardRef((_prop, ref: ForwardedRef<HTMLElement>) => {
             id="about"
             className="relative z-0 flex flex-col-reverse items-center justify-center min-h-screen px-6 mb-10 overflow-hidden md:mb-0 md:flex-row gap-x-6 2xl:gap-x-10"
         >
-            <div className="z-40 w-full md:w-5/12 ">
-                <CodeText type="head" tag="h1">
-                    <h1 className="">
-                        <span className="text-sec font-code">01.</span>
-                        About
-                    </h1>
-                </CodeText>
+            <motion.div
+                variants={container}
+                initial="hidden"
+                whileInView="show"
+                className="z-40 w-full md:w-5/12 "
+            >
+                <motion.div className="" variants={item}>
+                    <CodeText type="head" tag="h1">
+                        <h1 className="">
+                            <span className="text-sec font-code">01.</span>
+                            About
+                        </h1>
+                    </CodeText>
+                </motion.div>
+
                 {/*        About Context       */}
                 <div className="flex flex-col w-full mt-2 2xl:gap-y-8 gap-y-4 2xl:mt-8 md:mt-4 ">
-                    <CodeText type="p" tag="p">
-                        <div className="flex flex-col gap-y-2 2xl:gap-y-4 ">
+                    <motion.div
+                        variants={item}
+                        className="flex flex-col xl:gap-y-8 gap-y-4"
+                    >
+                        <CodeText type="p" tag="p">
+                            <div className="flex flex-col gap-y-2 2xl:gap-y-4 ">
+                                <p>
+                                    Hi, I'm Roshan Kumar. My interest in web
+                                    development started in 2021. I've been
+                                    learning a lot of new skills since that day
+                                    and have begun my path as a full-stack
+                                    developer.
+                                </p>
+                                <p className="">
+                                    Building useful web applications in an
+                                    effort to make everyone's life easier.
+                                </p>
+                                <p className="">
+                                    Interested in the entire full-stack spectrum
+                                    and working on ambitious project with
+                                    positive people.
+                                </p>
+                            </div>
+                        </CodeText>
+
+                        <CodeText type="p" tag="p" line="single">
                             <p>
-                                Hi, I'm Roshan Kumar. My interest in web
-                                development started in 2021. I've been learning
-                                a lot of new skills since that day and have
-                                begun my path as a full-stack developer.
+                                Here are a few technologies I’ve been working
+                                with recently
                             </p>
-                            <p className="">
-                                Building useful web applications in an effort to
-                                make everyone's life easier.
-                            </p>
-                            <p className="">
-                                Interested in the entire full-stack spectrum and
-                                working on ambitious project with positive
-                                people.
-                            </p>
-                        </div>
-                    </CodeText>
-                    <CodeText type="p" tag="p" line="single">
-                        <p>
-                            Here are a few technologies I’ve been working with
-                            recently
-                        </p>
-                    </CodeText>
+                        </CodeText>
+                    </motion.div>
+
                     {/*      Skills    */}
-                    <div className="grid grid-cols-1 gap-2 ml-6 md:grid-cols-2 md:ml-8 w-max 2xl:gap-4 gap-x-8">
+                    <motion.div
+                        variants={item}
+                        className="grid grid-cols-1 gap-2 ml-6 md:grid-cols-2 md:ml-8 w-max 2xl:gap-4 gap-x-8"
+                    >
                         {languages.map((lang, i) => (
                             <h1
                                 onMouseEnter={() => setHoverState(lang.name)}
@@ -128,9 +149,9 @@ const About = forwardRef((_prop, ref: ForwardedRef<HTMLElement>) => {
                                 </span>
                             </h1>
                         ))}
-                    </div>
+                    </motion.div>
                 </div>
-            </div>
+            </motion.div>
             {/*       Right Side Skill       */}
             <Skill hoverState={hoverState} languages={languages} />
         </section>

@@ -1,4 +1,6 @@
+import { motion, Variants } from "framer-motion"
 import React from "react"
+import { container } from "./HomeHero"
 
 interface LanguageProp {
     name: string
@@ -11,11 +13,26 @@ interface SkillProps {
     languages: LanguageProp[]
 }
 
+const opacityItem: Variants = {
+    hidden: {
+        opacity: 0,
+    },
+    show: {
+        opacity: 1,
+    },
+}
+
 const Skill = ({ hoverState, languages }: SkillProps) => {
     return (
-        <div className="absolute inset-0 z-0 flex flex-wrap h-full text-gray-800 md:text-gray-700 md:relative md:w-5/12 gap-x-8 gap-y-4 ">
+        <motion.div
+            variants={container}
+            initial={"hidden"}
+            whileInView={"show"}
+            className="absolute inset-0 z-0 flex flex-wrap h-full text-gray-800 md:text-gray-700 md:relative md:w-5/12 gap-x-8 gap-y-4 "
+        >
             {languages.map((lang, i) => (
-                <h1
+                <motion.h1
+                    variants={opacityItem}
                     key={i}
                     className={`font-semibold cursor-pointer select-none transition-all font-code hover:scale-150 z-0 ${
                         lang.style
@@ -26,9 +43,9 @@ const Skill = ({ hoverState, languages }: SkillProps) => {
                     } `}
                 >
                     {lang.name}
-                </h1>
+                </motion.h1>
             ))}
-        </div>
+        </motion.div>
     )
 }
 
