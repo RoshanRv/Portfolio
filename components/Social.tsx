@@ -5,11 +5,15 @@ import { HiOutlineMail } from "react-icons/hi"
 import { FiLinkedin } from "react-icons/fi"
 import { ImProfile } from "react-icons/im"
 import useScroll from "../hooks/useScroll"
+import { container } from "./HomeHero"
 
 const Social = () => {
     const { scrollYProgress } = useScroll()
     return (
         <motion.div
+            variants={container}
+            initial={"hidden"}
+            animate={"show"}
             style={{ bottom: `calc(${scrollYProgress}% + 5rem)` }}
             className="fixed  left-6 text-[1.6rem] transition-all duration-500 hidden md:block "
         >
