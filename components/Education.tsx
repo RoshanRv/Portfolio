@@ -4,7 +4,10 @@ import { HomeProp } from "../pages"
 import CodeText from "./CodeText"
 import { container, item } from "./HomeHero"
 
-const Education = forwardRef((_prop, ref: ForwardedRef<HTMLElement>) => {
+const Education = forwardRef(function education(
+    _prop,
+    ref: ForwardedRef<HTMLElement>
+) {
     return (
         <section
             ref={ref}

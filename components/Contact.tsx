@@ -15,7 +15,10 @@ interface EmailResult {
     style: string
 }
 
-const Contact = forwardRef((_prop, ref: ForwardedRef<HTMLElement>) => {
+const Contact = forwardRef(function contact(
+    _prop,
+    ref: ForwardedRef<HTMLElement>
+) {
     const emailRef = useRef<any>(null)
 
     const [emailResult, setEmailResult] = useState({} as EmailResult)

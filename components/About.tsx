@@ -68,7 +68,7 @@ const languages = [
     },
 ]
 
-const About = forwardRef((_prop, ref: ForwardedRef<HTMLElement>) => {
+const About = forwardRef(function about(_prop, ref: ForwardedRef<HTMLElement>) {
     const [hoverState, setHoverState] = useState("")
 
     return (
@@ -101,20 +101,21 @@ const About = forwardRef((_prop, ref: ForwardedRef<HTMLElement>) => {
                         <CodeText type="p" tag="p">
                             <div className="flex flex-col gap-y-2 2xl:gap-y-4 ">
                                 <p>
+                                    {`
                                     Hi, I'm Roshan Kumar. My interest in web
                                     development started in 2021. I've been
                                     learning a lot of new skills since that day
                                     and have begun my path as a full-stack
-                                    developer.
+                                    developer.`}
                                 </p>
                                 <p className="">
-                                    Building useful web applications in an
-                                    effort to make everyone's life easier.
+                                    {`Building useful web applications in an
+                                    effort to make everyone's life easier.`}
                                 </p>
                                 <p className="">
-                                    Interested in the entire full-stack spectrum
+                                    {`Interested in the entire full-stack spectrum
                                     and working on ambitious project with
-                                    positive people.
+                                    positive people.`}
                                 </p>
                             </div>
                         </CodeText>

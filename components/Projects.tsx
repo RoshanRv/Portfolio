@@ -29,7 +29,10 @@ interface MyProjectProp extends StarredProjectProp {
 type StarredProjects = StarredProjectProp[]
 type ProjectsProps = MyProjectProp[]
 
-const Projects = forwardRef((_prop, ref: ForwardedRef<HTMLElement>) => {
+const Projects = forwardRef(function projects(
+    _prop,
+    ref: ForwardedRef<HTMLElement>
+) {
     const [projects, setProjects] = useState([] as ProjectsProps)
 
     //         ***** . Get Project Lang     *****
