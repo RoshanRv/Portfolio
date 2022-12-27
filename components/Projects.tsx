@@ -208,8 +208,11 @@ const ProjectCard = ({
                         <p>{data.description}</p>
                         {/*     topics     */}
                         <div className="flex flex-wrap w-full gap-4">
-                            {data.topics.map((topic) => (
-                                <p className="px-2 py-1 text-sm transition-all rounded-full md:text-sm bg-code/70 hover:text-white">
+                            {data.topics.map((topic, i) => (
+                                <p
+                                    key={i}
+                                    className="px-2 py-1 text-sm transition-all rounded-full md:text-sm bg-code/70 hover:text-white"
+                                >
                                     {topic}
                                 </p>
                             ))}
