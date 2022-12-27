@@ -189,7 +189,7 @@ l-49 -30 -284 -3 -283 -3 0 -415 0 -414 90 0 90 0 0 330 0 330 193 0 c224 0
                     <div
                         className={`absolute top-full flex flex-col items-center justify-center w-full py-10 bg-gray-900  gap-y-10 transition-all z-30 ${
                             showMenu ? "left-0" : "-left-full"
-                        } `}
+                        } shadow-md shadow-black/50 `}
                     >
                         {/*    1.    */}
                         <HeaderButton

@@ -290,37 +290,54 @@ const Contact = forwardRef((_prop, ref: ForwardedRef<HTMLElement>) => {
                     </motion.div>
                 </motion.div>
             </div>
+
             {/*   Links MOB   */}
-            <div className="flex flex-col w-full mt-8 md:hidden gap-y-6">
+
+            <motion.div
+                variants={container}
+                initial={"hidden"}
+                whileInView={"show"}
+                className="flex flex-col w-full mt-8 md:hidden gap-y-6"
+            >
                 <div className="flex justify-around">
                     {/* Github  */}
-                    <ContactButton link="https://github.com/RoshanRv">
-                        <TbBrandGithub />
-                    </ContactButton>
+                    <motion.div variants={item} className="flex">
+                        <ContactButton link="https://github.com/RoshanRv">
+                            <TbBrandGithub />
+                        </ContactButton>
+                    </motion.div>
 
                     {/*     Linked In     */}
-                    <ContactButton link="https://www.linkedin.com/in/roshan-kumar--/">
-                        <FiLinkedin />
-                    </ContactButton>
+                    <motion.div variants={item} className="flex">
+                        <ContactButton link="https://www.linkedin.com/in/roshan-kumar--/">
+                            <FiLinkedin />
+                        </ContactButton>
+                    </motion.div>
 
                     {/*      Resume Button    */}
-                    <ContactButton link="https://drive.google.com/file/d/18SiR0b2RnSoMEhCFaB6cugfhv4Pd5492/view?usp=sharing">
-                        <ImProfile />
-                    </ContactButton>
+                    <motion.div variants={item} className="flex">
+                        <ContactButton link="https://drive.google.com/file/d/18SiR0b2RnSoMEhCFaB6cugfhv4Pd5492/view?usp=sharing">
+                            <ImProfile />
+                        </ContactButton>
+                    </motion.div>
                 </div>
 
                 <div className="flex justify-around">
                     {/* Twitter  */}
-                    <ContactButton link="https://twitter.com/RoshanK18328680">
-                        <TbBrandTwitter />
-                    </ContactButton>
+                    <motion.div variants={item} className="flex">
+                        <ContactButton link="https://twitter.com/RoshanK18328680">
+                            <TbBrandTwitter />
+                        </ContactButton>
+                    </motion.div>
 
                     {/*     Mail     */}
-                    <ContactButton link="mailto:nkroshankumar@gmail.com">
-                        <HiOutlineMail />
-                    </ContactButton>
+                    <motion.div variants={item} className="flex">
+                        <ContactButton link="mailto:nkroshankumar@gmail.com">
+                            <HiOutlineMail />
+                        </ContactButton>
+                    </motion.div>
                 </div>
-            </div>
+            </motion.div>
         </section>
     )
 })

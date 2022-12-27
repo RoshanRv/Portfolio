@@ -224,7 +224,7 @@ const ProjectCard = ({
                     {/*   Demo Link   */}
                     <a
                         href={data.homepage}
-                        className="p-3 text-2xl transition-all duration-500 border-2 hover:text-code hover:scale-90 text-sub border-sec rouned-xl"
+                        className="p-3 text-2xl transition-all duration-500 border-2 hover:text-code hover:scale-90 text-sub border-sec "
                         rel="noopener noreferrer"
                         target="_blank"
                     >
@@ -233,7 +233,7 @@ const ProjectCard = ({
                     {/*    Github Link  */}
                     <a
                         href={data.html_url}
-                        className="p-3 text-2xl transition-all duration-500 border-2 hover:text-code hover:scale-90 text-sub border-sec roundd-xl"
+                        className="p-3 text-2xl transition-all duration-500 border-2 hover:text-code hover:scale-90 text-sub border-sec "
                         rel="noopener noreferrer"
                         target="_blank"
                     >
