@@ -7,6 +7,8 @@ import { HiOutlineMail } from "react-icons/hi"
 import { FiLinkedin } from "react-icons/fi"
 import { ImProfile } from "react-icons/im"
 import { HomeProp } from "../pages"
+import { motion } from "framer-motion"
+import { container, item } from "./HomeHero"
 
 interface EmailResult {
     message: string | null
@@ -128,33 +130,56 @@ const Contact = forwardRef((_prop, ref: ForwardedRef<HTMLElement>) => {
             }}
             className="flex flex-col items-center justify-center min-h-screen px-2 pb-8"
         >
-            <CodeText tag="h1" type="head">
-                <h1 className="">
-                    <span className="text-sec font-code ">04.</span>
-                    Contact
-                </h1>
-            </CodeText>
+            {/*    Title  */}
+            <motion.div
+                variants={item}
+                initial={"hidden"}
+                whileInView={"show"}
+                className=""
+            >
+                <CodeText tag="h1" type="head">
+                    <h1 className="">
+                        <span className="text-sec font-code ">04.</span>
+                        Contact
+                    </h1>
+                </CodeText>
+            </motion.div>
+
             <div className="flex flex-col justify-center md:justify-around md:flex-row md:gap-x-40">
                 {/*     Left Social Links     */}
-                <div className="flex-col self-end hidden gap-y-10 md:flex">
+                <motion.div
+                    variants={container}
+                    initial={"hidden"}
+                    whileInView={"show"}
+                    className="flex-col self-end hidden gap-y-10 md:flex"
+                >
                     {/* Github  */}
-                    <ContactButton link="https://github.com/RoshanRv">
-                        <TbBrandGithub />
-                    </ContactButton>
+                    <motion.div variants={item} className="flex">
+                        <ContactButton link="https://github.com/RoshanRv">
+                            <TbBrandGithub />
+                        </ContactButton>
+                    </motion.div>
 
                     {/*     Linked In     */}
-                    <ContactButton link="https://www.linkedin.com/in/roshan-kumar--/">
-                        <FiLinkedin />
-                    </ContactButton>
+                    <motion.div variants={item} className="flex">
+                        <ContactButton link="https://www.linkedin.com/in/roshan-kumar--/">
+                            <FiLinkedin />
+                        </ContactButton>
+                    </motion.div>
 
                     {/*      Resume Button    */}
-                    <ContactButton link="https://drive.google.com/file/d/18SiR0b2RnSoMEhCFaB6cugfhv4Pd5492/view?usp=sharing">
-                        <ImProfile />
-                    </ContactButton>
-                </div>
+                    <motion.div variants={item} className="flex">
+                        <ContactButton link="https://drive.google.com/file/d/18SiR0b2RnSoMEhCFaB6cugfhv4Pd5492/view?usp=sharing">
+                            <ImProfile />
+                        </ContactButton>
+                    </motion.div>
+                </motion.div>
 
                 {/*         Form       */}
-                <form
+                <motion.form
+                    variants={container}
+                    initial={"hidden"}
+                    whileInView={"show"}
                     onSubmit={(e) => sendEmail(e)}
                     ref={emailRef}
                     className="flex flex-col p-6 mt-10 transition-all duration-500 border-2 rounded-lg md:p-20 gap-y-10 border-sec/50 btn-shadow md:py-14"
@@ -242,19 +267,28 @@ const Contact = forwardRef((_prop, ref: ForwardedRef<HTMLElement>) => {
                             <h1>{emailResult.message}</h1>
                         </div>
                     )}
-                </form>
+                </motion.form>
                 {/*     Right Social Links     */}
-                <div className="flex-col self-end hidden md:flex gap-y-10">
+                <motion.div
+                    variants={container}
+                    initial={"hidden"}
+                    whileInView={"show"}
+                    className="flex-col self-end hidden md:flex gap-y-10"
+                >
                     {/* Twitter  */}
-                    <ContactButton link="https://twitter.com/RoshanK18328680">
-                        <TbBrandTwitter />
-                    </ContactButton>
+                    <motion.div variants={item} className="flex">
+                        <ContactButton link="https://twitter.com/RoshanK18328680">
+                            <TbBrandTwitter />
+                        </ContactButton>
+                    </motion.div>
 
                     {/*     Mail     */}
-                    <ContactButton link="mailto:nkroshankumar@gmail.com">
-                        <HiOutlineMail />
-                    </ContactButton>
-                </div>
+                    <motion.div variants={item} className="flex">
+                        <ContactButton link="mailto:nkroshankumar@gmail.com">
+                            <HiOutlineMail />
+                        </ContactButton>
+                    </motion.div>
+                </motion.div>
             </div>
             {/*   Links MOB   */}
             <div className="flex flex-col w-full mt-8 md:hidden gap-y-6">
