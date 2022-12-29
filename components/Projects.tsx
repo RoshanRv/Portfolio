@@ -5,6 +5,7 @@ import { TbBrandGithub } from "react-icons/tb"
 import { FiExternalLink } from "react-icons/fi"
 import { motion, Variants } from "framer-motion"
 import { item } from "./HomeHero"
+import Image from "next/image"
 
 interface OwnerProp {
     login: string
@@ -45,13 +46,19 @@ const Projects = forwardRef(function Projects(
             console.log(e)
         }
     }
+    //https://raw.githubusercontent.com/RoshanRv/${project.name}/main/README.md
 
     //              *** .  Get Project Img      ****
     const getProjectImage = async (project: StarredProjectProp) => {
         try {
             const readme = await axios.get(
-                `https://raw.githubusercontent.com/RoshanRv/${project.name}/main/README.md`
+                `https://api.github.com/repos/RoshanRv/${project.name}/readme`,
+                {
+                    headers: { Accept: "application/vnd.github.v3.raw" },
+                }
             )
+            console.log(readme.data)
+
             const imgUrl = JSON.stringify(
                 readme.data
                     .split(" ")
@@ -173,9 +180,10 @@ const ProjectCard = ({
                     target="_blank"
                     className=""
                 >
-                    <img
+                    <Image
                         src={data.img_url}
                         alt={`${data.name}_img`}
+                        fill={true}
                         className="w-full h-full transition-all origin-center border-2 shadow-xl roundd-lg md:border-4 border-sec shadow-black/80 hover:scale-110"
                     />
                 </a>

@@ -6,7 +6,6 @@ import { TbBrandGithub, TbBrandTwitter } from "react-icons/tb"
 import { HiOutlineMail } from "react-icons/hi"
 import { FiLinkedin } from "react-icons/fi"
 import { ImProfile } from "react-icons/im"
-import { HomeProp } from "../pages"
 import { motion } from "framer-motion"
 import { container, item } from "./HomeHero"
 
