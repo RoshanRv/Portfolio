@@ -57,7 +57,6 @@ const Projects = forwardRef(function Projects(
                     headers: { Accept: "application/vnd.github.v3.raw" },
                 }
             )
-            console.log(readme.data)
 
             const imgUrl = JSON.stringify(
                 readme.data
@@ -173,18 +172,17 @@ const ProjectCard = ({
              ${side == "left" ? "md:flex-row" : "md:flex-row-reverse"} `}
         >
             {/*      Img        */}
-            <div className="2xl:w-[40rem] 2xl:h-[25rem] md:w-[35rem] md:[h-20rem] relative peer">
+            <div className="2xl:w-[40rem] 2xl:h-[25rem] md:w-[35rem] md:[h-20rem]  relative peer">
                 <a
                     href={data.homepage}
                     rel="noopener noreferrer"
                     target="_blank"
                     className=""
                 >
-                    <Image
+                    <img
                         src={data.img_url}
                         alt={`${data.name}_img`}
-                        fill={true}
-                        className="w-full h-full transition-all origin-center border-2 shadow-xl roundd-lg md:border-4 border-sec shadow-black/80 hover:scale-110"
+                        className="relative w-full h-full transition-all origin-center border-2 shadow-xl roundd-lg md:border-4 border-sec shadow-black/80 hover:scale-110"
                     />
                 </a>
             </div>
