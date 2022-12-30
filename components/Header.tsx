@@ -46,11 +46,11 @@ const Header = ({ activeSection }: { activeSection: string | null }) => {
 
     return (
         <>
-            {/*       Lap/ Tab Nav       */}
+            {/*       Lap Nav       */}
             <motion.nav
                 initial={{ y: -300 }}
                 animate={{ y: 0 }}
-                className={`fixed z-50 left-0  w-full  items-center justify-around  py-4 bg-gray-900 transition-all duration-500 hidden md:flex ${
+                className={`fixed z-50 left-0  w-full  items-center justify-around  py-4 bg-gray-900 transition-all duration-500 hidden lg:flex ${
                     scrollYProgress > 8 ? "shadow-md" : ""
                 } ${
                     !isMovingUp && scrollYProgress > 8 ? "-top-full" : "top-0"
@@ -131,14 +131,14 @@ l-49 -30 -284 -3 -283 -3 0 -415 0 -414 90 0 90 0 0 330 0 330 193 0 c224 0
 
             {/*       Mob Nav       */}
             <nav
-                className={`fixed z-50 w-full bg-gray-900  md:hidden transition-all duration-500 shadow-black/50 ${
+                className={`fixed z-50 w-full bg-gray-900 py-1 lg:hidden transition-all duration-500 shadow-black/50 ${
                     scrollYProgress > 8 ? "shadow-md" : ""
                 } ${
                     !isMovingUp && scrollYProgress > 8 ? "-top-full" : "top-0"
                 } `}
             >
                 <div className="relative flex items-center justify-between w-full px-10">
-                    <Link href={"#"} className="block md:hidden">
+                    <Link href={"#"} className="block lg:hidden">
                         <svg
                             version="1.0"
                             xmlns="http://www.w3.org/2000/svg"
