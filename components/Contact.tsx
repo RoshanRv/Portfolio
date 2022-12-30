@@ -153,7 +153,7 @@ const Contact = forwardRef(function Contact(
                     variants={container}
                     initial={"hidden"}
                     whileInView={"show"}
-                    className="flex-col self-end hidden gap-y-10 md:flex"
+                    className="flex-col self-end hidden gap-y-10 lg:flex"
                 >
                     {/* Github  */}
                     <motion.div variants={item} className="flex">
@@ -184,9 +184,9 @@ const Contact = forwardRef(function Contact(
                     whileInView={"show"}
                     onSubmit={(e) => sendEmail(e)}
                     ref={emailRef}
-                    className="flex flex-col p-6 mt-10 transition-all duration-500 border-2 md:p-20 gap-y-10 border-sec/50 btn-shadow md:py-14"
+                    className="flex flex-col p-6 mt-10 transition-all duration-500 border-2 md:p-20 gap-y-10 border-sec/50 btn-shadow md:py-14 w-auto md:w-[90%] lg:w-auto mx-auto "
                 >
-                    <div className="flex flex-col items-baseline w-full gap-8 md:flex-row">
+                    <div className="flex flex-col items-baseline w-full gap-8 lg:flex-row">
                         {/*      Name     */}
                         <div className="flex flex-col-reverse justify-end w-full">
                             {emailValidation.name && (
@@ -198,7 +198,7 @@ const Contact = forwardRef(function Contact(
                                 name="name"
                                 type="text"
                                 placeholder="Name"
-                                className="w-full p-2 overflow-hidden transition-all border-b-2 rounded-t-sm peer placeholder:text-transparent outline-0 text-sec bg-code border-sub/80 placeholder-shown:bg-transparent focus:bg-code font-sm md:w-80"
+                                className="w-full p-2 overflow-hidden transition-all border-b-2 rounded-t-sm peer placeholder:text-transparent outline-0 text-sec bg-code border-sub/80 placeholder-shown:bg-transparent focus:bg-code font-sm lg:w-80"
                             />
                             <h1 className="mb-1 text-sm transition-all peer-placeholder-shown:text-sub/80 peer-focus:text-code text-code peer-focus:text-sm peer-placeholder-shown:text-lg peer-focus:mb-1 peer-placeholder-shown:-mb-8 ">
                                 Name
@@ -215,7 +215,7 @@ const Contact = forwardRef(function Contact(
                                 name="email"
                                 type="email"
                                 placeholder="Email"
-                                className="w-full p-2 overflow-hidden transition-all border-b-2 rounded-t-sm peer placeholder:text-transparent invalid:border-red-800 invalid:border-b-4 outline-0 text-sec bg-code border-sub/80 placeholder-shown:bg-transparent focus:bg-code font-sm md:w-80"
+                                className="w-full p-2 overflow-hidden transition-all border-b-2 rounded-t-sm peer placeholder:text-transparent invalid:border-red-800 invalid:border-b-4 outline-0 text-sec bg-code border-sub/80 placeholder-shown:bg-transparent focus:bg-code font-sm lg:w-80"
                             />
                             <h1 className="mb-1 text-sm transition-all peer-placeholder-shown:text-sub/80 peer-focus:text-code text-code peer-focus:text-sm peer-placeholder-shown:text-lg peer-focus:mb-1 peer-placeholder-shown:-mb-8">
                                 Email
@@ -275,7 +275,7 @@ const Contact = forwardRef(function Contact(
                     variants={container}
                     initial={"hidden"}
                     whileInView={"show"}
-                    className="flex-col self-end hidden md:flex gap-y-10"
+                    className="flex-col self-end hidden lg:flex gap-y-10"
                 >
                     {/* Twitter  */}
                     <motion.div variants={item} className="flex">
@@ -299,7 +299,7 @@ const Contact = forwardRef(function Contact(
                 variants={container}
                 initial={"hidden"}
                 whileInView={"show"}
-                className="flex flex-col w-full mt-8 md:hidden gap-y-6"
+                className="flex flex-col w-full mt-8 lg:hidden gap-y-6"
             >
                 <div className="flex justify-around">
                     {/* Github  */}

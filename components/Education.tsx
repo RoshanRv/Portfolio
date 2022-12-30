@@ -36,7 +36,7 @@ const Education = forwardRef(function Education(
                 </motion.div>
 
                 {/*   Timeline     */}
-                <div className="mt-8 ml-16 md:ml-0 2xl:mt-16 md:mt-10">
+                <div className="mt-8 ml-16 md:ml-24 lg:ml-0 2xl:mt-16 md:mt-10">
                     {/*     Tagore     */}
                     <motion.div
                         variants={item}
@@ -94,7 +94,9 @@ const EducationCard = ({
             <Year year={year} />
 
             <CodeText type="sub" tag="h3">
-                <h1 className="text-lg 2xl:text-4xl md:text-3xl">{name}</h1>
+                <h1 className="text-lg 2xl:text-4xl md:text-2xl lg:text-3xl">
+                    {name}
+                </h1>
             </CodeText>
             <CodeText type="p" tag="p" line="single">
                 <p className="text-sm md:text-base lg:text-lg">{std}</p>
@@ -106,7 +108,7 @@ const EducationCard = ({
 const Year = ({ year, end = false }: { year: string; end?: boolean }) => {
     return (
         <div
-            className={`absolute  left-0  flex items-center gap-x-2 md:gap-x-6
+            className={`absolute  left-0  flex items-center gap-x-2 lg:gap-x-6
             ${
                 end
                     ? "top-full -translate-y-1/2 -translate-x-[92%] "
@@ -114,7 +116,7 @@ const Year = ({ year, end = false }: { year: string; end?: boolean }) => {
             }
             `}
         >
-            <h1 className="text-sm font-semibold text-white md:text-2xl">
+            <h1 className="text-sm font-semibold text-white md:text-xl lg:text-2xl">
                 {year}
             </h1>
             <div className="w-4 h-4 border rounded-full md:border-2 md:w-6 md:h-6 bg-code border-sec "></div>

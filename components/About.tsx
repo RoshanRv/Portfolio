@@ -75,7 +75,7 @@ const About = forwardRef(function About(_prop, ref: ForwardedRef<HTMLElement>) {
         <section
             ref={ref}
             id="about"
-            className="relative z-0 flex flex-col-reverse items-center justify-center min-h-screen px-6 mb-10 overflow-hidden md:mb-0 md:flex-row gap-x-6 2xl:gap-x-10"
+            className="relative z-0 flex flex-col-reverse items-center justify-center min-h-screen px-4 mb-10 overflow-hidden lg:px-6 md:px-2 md:mb-0 md:flex-row gap-x-6 2xl:gap-x-10"
         >
             <motion.div
                 variants={container}
