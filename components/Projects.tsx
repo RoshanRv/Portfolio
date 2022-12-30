@@ -182,7 +182,11 @@ const ProjectCard = ({
                     <img
                         src={data.img_url}
                         alt={`${data.name}_img`}
-                        className="relative w-full h-full transition-all origin-center border-2 shadow-xl roundd-lg md:border-4 border-sec shadow-black/80 hover:scale-110"
+                        className={`relative w-full h-full transition-all duration-500 origin-center border-2 shadow-xl   md:border-4 border-sec shadow-black/80 hover:scale-110 ${
+                            side == "left"
+                                ? "btn-shadow-big"
+                                : "btn-shadow-big-r"
+                        } `}
                     />
                 </a>
             </div>
@@ -203,7 +207,13 @@ const ProjectCard = ({
 
                 {/*      Desc    */}
 
-                <div className="p-6 bg-black border-2 shadow-lg shadow-black/60 border-sec/70">
+                <div
+                    className={`p-6 transition-all duration-500 bg-black border-2 shadow-lg shadow-black/60 border-sec/70  ${
+                        side == "left"
+                            ? "hover:translate-x-14 btn-shadow-r "
+                            : "hover:-translate-x-14 btn-shadow "
+                    } `}
+                >
                     {/*     Name  mob   */}
                     <div className="block mb-2 md:hidden">
                         <CodeText tag="h3" type="sub">
@@ -227,7 +237,7 @@ const ProjectCard = ({
                 </div>
                 {/*   Links   */}
                 <div
-                    className={`flex  gap-x-10 ${
+                    className={`flex  gap-x-10  ${
                         side == "left"
                             ? "justify-end"
                             : "justify-end flex-row-reverse "
@@ -236,7 +246,9 @@ const ProjectCard = ({
                     {/*   Demo Link   */}
                     <a
                         href={data.homepage}
-                        className="p-3 text-2xl transition-all duration-500 border-2 hover:text-code hover:scale-90 text-sub border-sec "
+                        className={`p-3 text-2xl transition-all duration-500 border-2  hover:text-code hover:scale-90 text-sub border-sec ${
+                            side == "left" ? "btn-shadow-r" : "btn-shadow"
+                        } `}
                         rel="noopener noreferrer"
                         target="_blank"
                     >
@@ -245,7 +257,9 @@ const ProjectCard = ({
                     {/*    Github Link  */}
                     <a
                         href={data.html_url}
-                        className="p-3 text-2xl transition-all duration-500 border-2 hover:text-code hover:scale-90 text-sub border-sec "
+                        className={`p-3 text-2xl transition-all duration-500 border-2  hover:text-code hover:scale-90 text-sub border-sec ${
+                            side == "left" ? "btn-shadow-r" : "btn-shadow"
+                        }`}
                         rel="noopener noreferrer"
                         target="_blank"
                     >

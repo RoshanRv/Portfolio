@@ -61,9 +61,48 @@ const HomeHero = forwardRef(function HomeHero(
                     </CodeText>
                 </motion.div>
 
+                {/* Name  */}
                 <motion.div className="" variants={item}>
                     <CodeText tag="h1" type="head">
-                        <h1 className="pl-6">Roshan Kumar</h1>
+                        {/* <h1 className="pl-6">Roshan Kumar</h1> */}
+
+                        <div className="flex pl-6">
+                            {" "}
+                            <span className="transition-all cursor-pointer hover:text-code hover:scale-125">
+                                R
+                            </span>
+                            <span className="transition-all cursor-pointer hover:text-code hover:scale-125">
+                                o
+                            </span>
+                            <span className="transition-all cursor-pointer hover:text-code hover:scale-125">
+                                s
+                            </span>
+                            <span className="transition-all cursor-pointer hover:text-code hover:scale-125">
+                                h
+                            </span>
+                            <span className="transition-all cursor-pointer hover:text-code hover:scale-125">
+                                a
+                            </span>
+                            <span className="transition-all cursor-pointer hover:text-code hover:scale-125">
+                                n
+                            </span>
+                            &nbsp;
+                            <span className="transition-all cursor-pointer hover:text-code hover:scale-125">
+                                K
+                            </span>
+                            <span className="transition-all cursor-pointer hover:text-code hover:scale-125">
+                                u
+                            </span>
+                            <span className="transition-all cursor-pointer hover:text-code hover:scale-125">
+                                m
+                            </span>
+                            <span className="transition-all cursor-pointer hover:text-code hover:scale-125">
+                                a
+                            </span>
+                            <span className="transition-all cursor-pointer hover:text-code hover:scale-125">
+                                r
+                            </span>{" "}
+                        </div>
                     </CodeText>
                 </motion.div>
 

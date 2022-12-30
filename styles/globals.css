@@ -45,10 +45,32 @@ body {
 
 /*        Btn Shadow       */
 
+/*    left side   */
 .btn-shadow:hover {
     -webkit-box-shadow: -4px 4px 0px 0px var(--sec);
     -moz-box-shadow: -4px 4px 0px 0px var(--sec);
     box-shadow: -4px 4px 0px 0px var(--sec);
+}
+
+/*      right side */
+.btn-shadow-r:hover {
+    -webkit-box-shadow: 4px 4px 0px 0px var(--sec);
+    -moz-box-shadow: 4px 4px 0px 0px var(--sec);
+    box-shadow: 4px 4px 0px 0px var(--sec);
+}
+
+/*       big-left-side    */
+.btn-shadow-big:hover {
+    -webkit-box-shadow: -10px 10px 0px 0px var(--sec);
+    -moz-box-shadow: -10px 10px 0px 0px var(--sec);
+    box-shadow: -10px 10px 0px 0px var(--sec);
+}
+
+/*       big-right-side    */
+.btn-shadow-big-r:hover {
+    -webkit-box-shadow: 10px 10px 0px 0px var(--sec);
+    -moz-box-shadow: 10px 10px 0px 0px var(--sec);
+    box-shadow: 10px 10px 0px 0px var(--sec);
 }
 
 /*      Header       */
