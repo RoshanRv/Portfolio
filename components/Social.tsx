@@ -51,9 +51,10 @@ const Social = () => {
                 >
                     <HiOutlineMail />
                 </a>
+                {/*       Resume   */}
                 <a
                     href={
-                        "https://drive.google.com/file/d/18SiR0b2RnSoMEhCFaB6cugfhv4Pd5492/view?usp=sharing"
+                        "https://drive.google.com/file/d/17qKn0MhnzwkKTorr6CKfXJ3-BozsJ7K4/view?usp=sharing"
                     }
                     rel="noopener noreferrer"
                     target="_blank"
