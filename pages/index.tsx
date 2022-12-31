@@ -32,20 +32,30 @@ export default function Home() {
     return (
         <>
             <Head>
-                {/* <!-- Primary Meta Tags --> */}
+                {/* <!-- HTML Meta Tags --> */}
                 <title>Roshan Kumar | Full-Stack Developer</title>
-                <meta
-                    name="title"
-                    content="Roshan Kumar | Full-Stack Developer"
-                />
                 <meta
                     name="description"
                     content="Hi, I'm Roshan Kumar. I'm building useful web applications in an effort to make everyone's life easier."
                 />
 
-                {/* <!-- Open Graph / Facebook --/> */}
+                {/* <!-- Google / Search Engine Tags --> */}
+                <meta
+                    itemProp="name"
+                    content="Roshan Kumar | Full-Stack Developer"
+                />
+                <meta
+                    itemProp="description"
+                    content="Hi, I'm Roshan Kumar. I'm building useful web applications in an effort to make everyone's life easier."
+                />
+                <meta itemProp="image" content="meta.png" />
+
+                {/* <!-- Facebook Meta Tags --> */}
+                <meta
+                    property="og:url"
+                    content="https://portfolio-roshanrv.vercel.app"
+                />
                 <meta property="og:type" content="website" />
-                <meta property="og:url" content="https://metatags.io/" />
                 <meta
                     property="og:title"
                     content="Roshan Kumar | Full-Stack Developer"
@@ -56,18 +66,17 @@ export default function Home() {
                 />
                 <meta property="og:image" content="meta.png" />
 
-                {/* <!-- Twitter --/> */}
-                <meta property="twitter:card" content="summary_large_image" />
-                <meta property="twitter:url" content="https://metatags.io/" />
+                {/* <!-- Twitter Meta Tags --> */}
+                <meta name="twitter:card" content="summary_large_image" />
                 <meta
-                    property="twitter:title"
+                    name="twitter:title"
                     content="Roshan Kumar | Full-Stack Developer"
                 />
                 <meta
-                    property="twitter:description"
+                    name="twitter:description"
                     content="Hi, I'm Roshan Kumar. I'm building useful web applications in an effort to make everyone's life easier."
                 />
-                <meta property="twitter:image" content="meta.png" />
+                <meta name="twitter:image" content="meta.png" />
             </Head>
             <main className="overflow-hidden font-disp selection:bg-sec bg-gradient-to-br from-gray-900 to-slate-900 ">
                 <Header activeSection={activeSection} />
