@@ -7,6 +7,7 @@ import { BiInfoSquare } from "react-icons/bi"
 import { motion, Variants } from "framer-motion"
 import { item } from "./HomeHero"
 import Image from "next/image"
+import Button from "./Button"
 
 interface OwnerProp {
     login: string
@@ -133,6 +134,17 @@ const Projects = forwardRef(function Projects(
                     />
                 ))}
             </div>
+
+            <a
+                href={"https://github.com/RoshanRv"}
+                className={`border-sec border-2  px-10 py-3 text-white  relative transiton-all  w-max after:absolute after:w-28 after:h-3 after:contents-[''] after:bg-gray-900 after:-top-2 after:-right-1 hover:after:w-0 after:transition-all before:absolute before:w-28 before:h-3 before:contents-[''] before:bg-gray-900 before:-bottom-2 before:-left-1 hover:before:w-0 before:transition-all shadow-md duration-500 hover:shadow-sec hover:scale-110 font-code text-lg my-4 btn-shadow outline-0 `}
+                rel="noopener noreferrer"
+                target="_blank"
+            >
+                <span className="text-sx text-code">{"< "}</span>
+                More Projects
+                <span className="text-sx text-code">{" />"}</span>
+            </a>
         </section>
     )
 })
@@ -179,7 +191,7 @@ const ProjectCard = ({
              ${side == "left" ? "md:flex-row" : "md:flex-row-reverse"} `}
         >
             {/*      Img        */}
-            <div className="2xl:w-[40rem] 2xl:h-[25rem] md:w-[35rem] md:[h-20rem]  relative peer">
+            <div className=" md:w-[35rem] md:[h-20rem]  relative peer">
                 <a
                     href={data.homepage}
                     rel="noopener noreferrer"
