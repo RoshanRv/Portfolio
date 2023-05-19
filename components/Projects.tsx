@@ -3,6 +3,7 @@ import CodeText from "./CodeText"
 import axios from "axios"
 import { TbBrandGithub } from "react-icons/tb"
 import { FiExternalLink } from "react-icons/fi"
+import { BiInfoSquare } from "react-icons/bi"
 import { motion, Variants } from "framer-motion"
 import { item } from "./HomeHero"
 import Image from "next/image"
@@ -58,10 +59,12 @@ const Projects = forwardRef(function Projects(
                 }
             )
 
+            console.log(JSON.stringify(readme.data.split(" ")))
+
             const imgUrl = JSON.stringify(
                 readme.data
                     .split(" ")
-                    .find((text: string) => text.includes("image"))
+                    .find((text: string) => text.includes("github"))
             )
                 .split(/[()]/)
                 .find((word) => word.includes("http"))
@@ -163,6 +166,10 @@ const ProjectCard = ({
     data: MyProjectProp
     side: "left" | "right"
 }) => {
+    const [isHostedOnRender, _set] = useState(() => {
+        return data.topics.find((topic) => topic === "render") ? true : false
+    })
+
     return (
         <motion.div
             variants={projectAni}
@@ -227,13 +234,23 @@ const ProjectCard = ({
                             {data.topics.map((topic, i) => (
                                 <p
                                     key={i}
-                                    className="px-2 py-1 text-sm transition-all rounded-full md:text-sm bg-code/70 hover:text-white"
+                                    className="px-2 py-1 text-sm transition-all rounded-lg md:text-sm bg-code/70 hover:text-white"
                                 >
                                     {topic}
                                 </p>
                             ))}
                         </div>
                     </CodeText>
+                    {/* Render Warning */}
+                    {isHostedOnRender && (
+                        <div className="bg-sec/50 rounded-md border-sec border-2 p-2 mt-4 flex items-center text-gray-200 gap-x-4 w-max">
+                            <BiInfoSquare className="text-xl" />
+                            <h1 className="text-sm">
+                                Server hosted on Render (Free Tier), It may
+                                experience startup delays
+                            </h1>
+                        </div>
+                    )}
                 </div>
                 {/*   Links   */}
                 <div
