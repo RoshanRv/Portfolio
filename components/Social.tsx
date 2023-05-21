@@ -7,6 +7,8 @@ import { ImProfile } from "react-icons/im"
 import useScroll from "../hooks/useScroll"
 import { container } from "./HomeHero"
 
+const RESUME_LINK = "https://drive.google.com/file/d/187eydk-3TcQaSBX5rB3PBMRtrGXJIaRI/view"
+
 const Social = () => {
     const { scrollYProgress } = useScroll()
     return (
@@ -54,7 +56,7 @@ const Social = () => {
                 {/*       Resume   */}
                 <a
                     href={
-                        "https://drive.google.com/file/d/17qKn0MhnzwkKTorr6CKfXJ3-BozsJ7K4/view?usp=sharing"
+                        RESUME_LINK
                     }
                     rel="noopener noreferrer"
                     target="_blank"
