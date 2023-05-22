@@ -273,16 +273,18 @@ const ProjectCard = ({
                     }`}
                 >
                     {/*   Demo Link   */}
-                    <a
-                        href={data.homepage}
-                        className={`p-3 text-2xl transition-all duration-500 border-2  hover:text-code hover:scale-90 text-sub border-sec ${
-                            side == "left" ? "btn-shadow-r" : "btn-shadow"
-                        } `}
-                        rel="noopener noreferrer"
-                        target="_blank"
-                    >
-                        <FiExternalLink className="" />
-                    </a>
+                    {data.homepage && (
+                        <a
+                            href={data.homepage}
+                            className={`p-3 text-2xl transition-all duration-500 border-2  hover:text-code hover:scale-90 text-sub border-sec ${
+                                side == "left" ? "btn-shadow-r" : "btn-shadow"
+                            } `}
+                            rel="noopener noreferrer"
+                            target="_blank"
+                        >
+                            <FiExternalLink className="" />
+                        </a>
+                    )}
                     {/*    Github Link  */}
                     <a
                         href={data.html_url}
