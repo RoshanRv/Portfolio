@@ -20,6 +20,8 @@ const Contact = forwardRef(function Contact(
 ) {
     const emailRef = useRef<any>(null)
 
+    const [isLoading, setIsLoading] = useState(false)
+
     const [emailResult, setEmailResult] = useState({} as EmailResult)
     const [emailValidation, setEmailValidation] = useState({
         name: false,
@@ -74,6 +76,7 @@ const Contact = forwardRef(function Contact(
         })
 
         if (emailRef.current) {
+            setIsLoading(true)
             emailjs
                 .sendForm(
                     //
@@ -84,6 +87,7 @@ const Contact = forwardRef(function Contact(
                 )
                 .then(
                     (result) => {
+                        setIsLoading(false)
                         setEmailResult({
                             message: "Email Sent",
                             style: "bg-emerald-800",
@@ -92,6 +96,8 @@ const Contact = forwardRef(function Contact(
                         // console.log(result.text)
                     },
                     (error) => {
+                        setIsLoading(false)
+
                         setEmailResult({
                             message: "Something Is Wrong, Try Again Later",
                             style: "bg-red-800",
@@ -186,7 +192,7 @@ const Contact = forwardRef(function Contact(
                     ref={emailRef}
                     className="flex flex-col p-6 mt-10 transition-all duration-500 border-2 md:p-20 gap-y-10 border-sec/50 btn-shadow md:py-14 w-auto md:w-[90%] lg:w-auto mx-auto "
                 >
-                    <div className="flex flex-col items-baseline w-full gap-8 lg:flex-row">
+                    <div className="flex flex-col items-start w-full gap-8 lg:flex-row">
                         {/*      Name     */}
                         <div className="flex flex-col-reverse justify-end w-full">
                             {emailValidation.name && (
@@ -261,6 +267,12 @@ const Contact = forwardRef(function Contact(
                         {" Connect "}
                         <span className="text-sx text-code">{"/>"}</span>
                     </button>
+
+                    {/* Spinner */}
+
+                    {isLoading && (
+                        <div className="w-10 h-10 border-4 mx-auto text-center border-code border-t-sec animate-spin rounded-full"></div>
+                    )}
 
                     {emailResult.message && (
                         <div
